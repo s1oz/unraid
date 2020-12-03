@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>IYUUAutoReseed</Name>
+  <Repository>iyuucn/iyuuautoreseed</Repository>
+  <Registry>https://hub.docker.com/r/iyuucn/iyuuautoreseed</Registry>
+  <Network>host</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support/>
+  <Project>https://hub.docker.com/r/iyuucn/iyuuautoreseed</Project>
+  <Overview/>
+  <Category>Downloaders:</Category>
+  <WebUI/>
+  <TemplateURL/>
+  <Icon>https://raw.githubusercontent.com/s1oz/unraid/main/iyuu.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset>4,5</CPUset>
+  <DateInstalled>1605845787</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description/>
+  <Networking>
+    <Mode>host</Mode>
+    <Publish/>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/iyuu</HostDir>
+      <ContainerDir>/var/www/config</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/qbittorrent/data/qBittorrent/BT_backup/</HostDir>
+      <ContainerDir>/BT_backup</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/transmission/torrents/</HostDir>
+      <ContainerDir>/torrents</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value>1000</Value>
+      <Name>PUID</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>100</Value>
+      <Name>PGID</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="Host Key 2" Target="PUID" Default="" Mode="" Description="&#x5BB9;&#x5668; Variable: PUID" Type="Variable" Display="always" Required="false" Mask="false">1000</Config>
+  <Config Name="Host Key 3" Target="PGID" Default="" Mode="" Description="&#x5BB9;&#x5668; Variable: PGID" Type="Variable" Display="always" Required="false" Mask="false">100</Config>
+  <Config Name="config" Target="/var/www/config" Default="" Mode="rw" Description="&#x5BB9;&#x5668; Path: /config" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/iyuu</Config>
+  <Config Name="qb" Target="/BT_backup" Default="" Mode="rw" Description="&#x5BB9;&#x5668; Path: /BT_backup" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/qbittorrent/data/qBittorrent/BT_backup/</Config>
+  <Config Name="tr" Target="/torrents" Default="" Mode="rw" Description="&#x5BB9;&#x5668; Path: /torrents" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/transmission/torrents/</Config>
+</Container>

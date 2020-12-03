@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>jellyfin</Name>
+  <Repository>jellyfin/jellyfin</Repository>
+  <Registry>https://hub.docker.com/r/jellyfin/jellyfin/</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>bash</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://forum.jellyfin.org/c/support</Support>
+  <Project>https://github.com/jellyfin/jellyfin#jellyfin</Project>
+  <Overview>Jellyfin is a Free Software Media System that puts you in control of managing and streaming your media. It is an alternative to the proprietary Emby and Plex, to provide media from a dedicated server to end-user devices via multiple apps.[br][br][b][u][span style='color: #E80000;']Nvidia GPU Use[/span][/u][/b][br]Using the Unraid Nvidia Plugin to install a version of Unraid with the Nvidia Drivers installed and[br] add [b]--runtime=nvidia[/b] to [b]"extra parameters"[/b] (switch on advanced view) and[br]copy your [b]GPU UUID[/b] to [b]NVIDIA_VISIBLE_DEVICES.[/b][br][br][b][u][span style='color: #E80000;']Intel GPU Use[/span][/u][/b][br]Edit your [b]go[/b] file to include:[br][b]modprobe i915[br][/b], save and reboot, then [br]add [b]--device=/dev/dri[/b] to [b]"extra parameters"[/b] (switch on advanced view)</Overview>
+  <Category>MediaServer:Video MediaServer:Music</Category>
+  <WebUI>http://[IP]:[PORT:8998]/</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/djaydev/docker-virt-manager/master/UnRaid/template/jellyfin.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/jellyfin-logo.png</Icon>
+  <ExtraParams>-d -m 8G --restart=unless-stopped</ExtraParams>
+  <PostArgs/>
+  <CPUset>2,3,4,5</CPUset>
+  <DateInstalled>1606539390</DateInstalled>
+  <DonateText/>
+  <DonateLink>https://www.paypal.me/djaydev/0usd</DonateLink>
+  <Description>Jellyfin is a Free Software Media System that puts you in control of managing and streaming your media. It is an alternative to the proprietary Emby and Plex, to provide media from a dedicated server to end-user devices via multiple apps.[br][br][b][u][span style='color: #E80000;']Nvidia GPU Use[/span][/u][/b][br]Using the Unraid Nvidia Plugin to install a version of Unraid with the Nvidia Drivers installed and[br] add [b]--runtime=nvidia[/b] to [b]"extra parameters"[/b] (switch on advanced view) and[br]copy your [b]GPU UUID[/b] to [b]NVIDIA_VISIBLE_DEVICES.[/b][br][br][b][u][span style='color: #E80000;']Intel GPU Use[/span][/u][/b][br]Edit your [b]go[/b] file to include:[br][b]modprobe i915[br][/b], save and reboot, then [br]add [b]--device=/dev/dri[/b] to [b]"extra parameters"[/b] (switch on advanced view)</Description>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>8998</HostPort>
+        <ContainerPort>8096</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>8999</HostPort>
+        <ContainerPort>8920</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/pt/driver</HostDir>
+      <ContainerDir>/mnt/user/pt/driver</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/bt/driver</HostDir>
+      <ContainerDir>/mnt/user/bt/driver</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/jellyfin/cache</HostDir>
+      <ContainerDir>/cache</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/jellyfin</HostDir>
+      <ContainerDir>/config</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment/>
+  <Labels/>
+  <Config Name="Webui - HTTP" Target="8096" Default="" Mode="tcp" Description="Webui - Default 8096 (HTTP)" Type="Port" Display="always" Required="false" Mask="false">8998</Config>
+  <Config Name="Webui - HTTPS" Target="8920" Default="" Mode="tcp" Description="Webui - Default 8920 (HTTPS) (Optional)" Type="Port" Display="always" Required="false" Mask="false">8999</Config>
+  <Config Name="ptdriver" Target="/mnt/user/pt/driver" Default="" Mode="rw" Description="/pt/driver" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/pt/driver</Config>
+  <Config Name="btdriver" Target="/mnt/user/bt/driver" Default="" Mode="rw" Description="bt/driver" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/bt/driver</Config>
+  <Config Name="gpu" Target="NVIDIA_VISIBLE_DEVICES" Default="" Mode="" Description="/dev/dri" Type="Device" Display="always" Required="false" Mask="false">/dev/dri</Config>
+  <Config Name="Cache" Target="/cache" Default="" Mode="rw" Description="Cache Folder" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/jellyfin/cache</Config>
+  <Config Name="Appdata" Target="/config" Default="" Mode="rw" Description="Appdata" Type="Path" Display="advanced" Required="false" Mask="false">/mnt/user/appdata/jellyfin</Config>
+  <Config Name="Service Discovery" Target="1900" Default="" Mode="udp" Description="Service Discovery (Optional)" Type="Port" Display="always" Required="false" Mask="false">1900</Config>
+  <Config Name="Movies" Target="/movies" Default="" Mode="rw" Description="Movies - /movies" Type="Path" Display="always" Required="false" Mask="false"/>
+  <Config Name="TV" Target="/tv" Default="" Mode="rw" Description="TV - /tv" Type="Path" Display="always" Required="false" Mask="false"/>
+  <Config Name="Music" Target="/music" Default="" Mode="rw" Description="Music -/music" Type="Path" Display="always" Required="false" Mask="false"/>
+  <Config Name="Nvidia Visible Devices" Target="NVIDIA_VISIBLE_DEVICES" Default="" Mode="" Description="Nvidia Visible Devices (Optional - Requires Nvidia GPU and Unraid Nvidia build). Don't forget to add '--runtime=nvidia' to your 'Extra Parameters' in your docker template!" Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="Nvidia Driver Capabilities" Target="NVIDIA_DRIVER_CAPABILITIES" Default="" Mode="" Description="Nvidia Driver Capabilities (Optional - Requires Nvidia GPU and Unraid Nvidia build)" Type="Variable" Display="always" Required="false" Mask="false">all</Config>
+</Container>

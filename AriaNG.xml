@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>AriaNG</Name>
+  <Repository>p3terx/ariang</Repository>
+  <Registry>https://hub.docker.com/r/p3terx/ariang</Registry>
+  <Network>host</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support/>
+  <Project>https://hub.docker.com/r/p3terx/ariang</Project>
+  <Overview/>
+  <Category>Downloaders:</Category>
+  <WebUI>http://[IP]:[PORT:6880]/</WebUI>
+  <TemplateURL/>
+  <Icon>https://raw.githubusercontent.com/s1oz/unraid/main/ariang.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset>5</CPUset>
+  <DateInstalled>1603620280</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description/>
+  <Networking>
+    <Mode>host</Mode>
+    <Publish/>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/ariang</HostDir>
+      <ContainerDir>/config</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value>max-size=1m</Value>
+      <Name>log-opt</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>1000</Value>
+      <Name>PUID</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>100</Value>
+      <Name>PGID</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="Host Key 1" Target="log-opt" Default="" Mode="" Description="&#x5BB9;&#x5668; Variable: log-opt" Type="Variable" Display="always" Required="false" Mask="false">max-size=1m</Config>
+  <Config Name="Host Key 2" Target="PUID" Default="" Mode="" Description="&#x5BB9;&#x5668; Variable: PUID" Type="Variable" Display="always" Required="false" Mask="false">1000</Config>
+  <Config Name="Host Key 3" Target="PGID" Default="" Mode="" Description="&#x5BB9;&#x5668; Variable: PGID" Type="Variable" Display="always" Required="false" Mask="false">100</Config>
+  <Config Name="config" Target="/config" Default="" Mode="rw" Description="&#x5BB9;&#x5668; Path: /config" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/ariang</Config>
+</Container>

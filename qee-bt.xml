@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>qee-bt</Name>
+  <Repository>johngong/qbittorrent:qee-latest</Repository>
+  <Registry>https://hub.docker.com/r/johngong/qbittorrent</Registry>
+  <Network>br0</Network>
+  <MyIP>192.168.1.12</MyIP>
+  <Shell>bash</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://hub.docker.com/r/johngong/qbittorrent</Support>
+  <Project/>
+  <Overview>qBittorrent-EE:4.3.0.10,&#x96C6;&#x6210;Trackers&#x66F4;&#x65B0; </Overview>
+  <Category>Downloaders:</Category>
+  <WebUI>http://[IP]:[PORT:8082]/</WebUI>
+  <TemplateURL/>
+  <Icon>https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/qbittorrent-icon.png</Icon>
+  <ExtraParams>-m 4G --restart unless-stopped</ExtraParams>
+  <PostArgs/>
+  <CPUset>4,5</CPUset>
+  <DateInstalled>1606289031</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>qBittorrent-EE:4.3.0.10,&#x96C6;&#x6210;Trackers&#x66F4;&#x65B0; </Description>
+  <Networking>
+    <Mode>br0</Mode>
+    <Publish/>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/bt/downloads</HostDir>
+      <ContainerDir>/Downloads</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/qb/config</HostDir>
+      <ContainerDir>/config</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value>1000</Value>
+      <Name>PUID</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>100</Value>
+      <Name>PGID</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>8082</Value>
+      <Name>WEBUIPORT</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>YES</Value>
+      <Name>TRACKERSAUTO</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="/Downloads" Target="/Downloads" Default="" Mode="rw" Description="&#x5BB9;&#x5668; Path: /mnt/user/bt/downloads" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/bt/downloads</Config>
+  <Config Name="/config" Target="/config" Default="" Mode="rw" Description="&#x5BB9;&#x5668; Path: /config" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/qb/config</Config>
+  <Config Name="Host Key 1" Target="PUID" Default="" Mode="" Description="&#x5BB9;&#x5668; Variable: PUID" Type="Variable" Display="always" Required="false" Mask="false">1000</Config>
+  <Config Name="Host Key 2" Target="PGID" Default="" Mode="" Description="&#x5BB9;&#x5668; Variable: PGID" Type="Variable" Display="always" Required="false" Mask="false">100</Config>
+  <Config Name="WEBUIPORT" Target="WEBUIPORT" Default="" Mode="" Description="&#x5BB9;&#x5668; Variable: WEB_PORT" Type="Variable" Display="always" Required="false" Mask="false">8082</Config>
+  <Config Name="&#x81EA;&#x52A8;&#x66F4;&#x65B0;qBittorrent&#x7684;trackers" Target="TRACKERSAUTO" Default="" Mode="" Description="&#x5BB9;&#x5668; Variable: TRACKERSAUTO" Type="Variable" Display="always" Required="false" Mask="false">YES</Config>
+</Container>

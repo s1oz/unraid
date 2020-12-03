@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>qb-shuapt</Name>
+  <Repository>linuxserver/qbittorrent:version-14.2.5.99202004250119-7015-2c65b79ubuntu18.04.1</Repository>
+  <Registry>https://hub.docker.com/r/linuxserver/qbittorrent/</Registry>
+  <Network>br0</Network>
+  <MyIP>192.168.1.13</MyIP>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://forums.unraid.net/topic/59191-support-linuxserverio-qbittorrent/</Support>
+  <Project>https://www.qbittorrent.org</Project>
+  <Overview>The qBittorrent project aims to provide an open-source software alternative to &#xB5;Torrent. qBittorrent is based on the Qt toolkit and libtorrent-rasterbar library.</Overview>
+  <Category>Downloaders:</Category>
+  <WebUI>http://[IP]:[PORT:8080]/</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/qbittorrent.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/qbittorrent-icon.png</Icon>
+  <ExtraParams>-m 4G --restart unless-stopped</ExtraParams>
+  <PostArgs/>
+  <CPUset>4,5</CPUset>
+  <DateInstalled>1606287451</DateInstalled>
+  <DonateText>Donations</DonateText>
+  <DonateLink>https://www.linuxserver.io/donate</DonateLink>
+  <Description>The qBittorrent project aims to provide an open-source software alternative to &#xB5;Torrent. qBittorrent is based on the Qt toolkit and libtorrent-rasterbar library.</Description>
+  <Networking>
+    <Mode>br0</Mode>
+    <Publish/>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/shua/</HostDir>
+      <ContainerDir>/shua</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/qbittorrent</HostDir>
+      <ContainerDir>/config</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value>1000</Value>
+      <Name>PUID</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>100</Value>
+      <Name>PGID</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>Asia/Shanghai</Value>
+      <Name>TZ</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>51413</Value>
+      <Name>BT_PORT</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>8888</Value>
+      <Name>WEBUI_PORT</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="Key 1" Target="PUID" Default="" Mode="" Description="Container Variable: PUID" Type="Variable" Display="always" Required="false" Mask="false">1000</Config>
+  <Config Name="Key 2" Target="PGID" Default="" Mode="" Description="Container Variable: PGID" Type="Variable" Display="always" Required="false" Mask="false">100</Config>
+  <Config Name="Host Path 2" Target="/shua" Default="" Mode="rw" Description="&#x5BB9;&#x5668; Path: /shua" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/shua/</Config>
+  <Config Name="TZ" Target="TZ" Default="" Mode="" Description="&#x5BB9;&#x5668; Variable: TZ" Type="Variable" Display="always" Required="false" Mask="false">Asia/Shanghai</Config>
+  <Config Name="BT_PORT" Target="BT_PORT" Default="" Mode="" Description="&#x5BB9;&#x5668; Variable: BT_PORT" Type="Variable" Display="always" Required="false" Mask="false">51413</Config>
+  <Config Name="WEBUI_PORT" Target="WEBUI_PORT" Default="" Mode="" Description="&#x5BB9;&#x5668; Variable: WEBUI_PORT" Type="Variable" Display="always" Required="false" Mask="false">8888</Config>
+  <Config Name="AppData Config Path" Target="/config" Default="/mnt/user/appdata/qbittorrent" Mode="rw" Description="Container Path: /config" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/qbittorrent</Config>
+</Container>

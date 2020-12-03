@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>jd</Name>
+  <Repository>evinedeng/jd-base:latest</Repository>
+  <Registry>https://hub.docker.com/r/evinedeng/jd-base</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>bash</Shell>
+  <Privileged>true</Privileged>
+  <Support/>
+  <Project>https://github.com/EvineDeng/jd-base</Project>
+  <Overview>&#x7528;&#x6765;&#x8FD0;&#x884C;&#x4EAC;&#x4E1C;js&#x811A;&#x672C;&#x7684;&#x57FA;&#x672C;&#x73AF;&#x5883; &#xD;
+&#x6559;&#x7A0B;&#x8BF7;&#x89C1;&#xFF1A;https://github.com/EvineDeng/jd-base</Overview>
+  <Category>Productivity:</Category>
+  <WebUI/>
+  <TemplateURL/>
+  <Icon>https://raw.githubusercontent.com/s1oz/unraid/main/jd.png</Icon>
+  <ExtraParams>-dit</ExtraParams>
+  <PostArgs/>
+  <CPUset>4,5</CPUset>
+  <DateInstalled>1605670103</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>&#x7528;&#x6765;&#x8FD0;&#x884C;&#x4EAC;&#x4E1C;js&#x811A;&#x672C;&#x7684;&#x57FA;&#x672C;&#x73AF;&#x5883; &#xD;
+&#x6559;&#x7A0B;&#x8BF7;&#x89C1;&#xFF1A;https://github.com/EvineDeng/jd-base</Description>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish/>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/jd</HostDir>
+      <ContainerDir>/root</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment/>
+  <Labels/>
+  <Config Name="config" Target="/root" Default="" Mode="rw" Description="&#x5BB9;&#x5668; Path: /root" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/jd</Config>
+</Container>

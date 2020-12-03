@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>Aria2Pro</Name>
+  <Repository>p3terx/aria2-pro</Repository>
+  <Registry>https://hub.docker.com/r/p3terx/aria2-pro</Registry>
+  <Network>br0</Network>
+  <MyIP>192.168.1.15</MyIP>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support/>
+  <Project>https://p3terx.com/archives/docker-aria2-pro.html</Project>
+  <Overview/>
+  <Category>Downloaders:</Category>
+  <WebUI/>
+  <TemplateURL/>
+  <Icon>https://raw.githubusercontent.com/s1oz/unraid/main/aria2.png</Icon>
+  <ExtraParams>-m 4G</ExtraParams>
+  <PostArgs/>
+  <CPUset>1,2</CPUset>
+  <DateInstalled>1606281398</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description/>
+  <Networking>
+    <Mode>br0</Mode>
+    <Publish/>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/aria2</HostDir>
+      <ContainerDir>/config</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/bt/downloads</HostDir>
+      <ContainerDir>/downloads</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value>max-size=1m</Value>
+      <Name>log-opt</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>1000</Value>
+      <Name>PUID</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>100</Value>
+      <Name>PGID</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>passwd</Value>
+      <Name>RPC_SECRET</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>1024M</Value>
+      <Name>DISK_CACHE</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="Host Key 1" Target="log-opt" Default="" Mode="" Description="&#x5BB9;&#x5668; Variable: log-opt" Type="Variable" Display="always" Required="false" Mask="false">max-size=1m</Config>
+  <Config Name="Host Key 2" Target="PUID" Default="" Mode="" Description="&#x5BB9;&#x5668; Variable: PUID" Type="Variable" Display="always" Required="false" Mask="false">1000</Config>
+  <Config Name="Host Key 3" Target="PGID" Default="" Mode="" Description="&#x5BB9;&#x5668; Variable: PGID" Type="Variable" Display="always" Required="false" Mask="false">100</Config>
+  <Config Name="Host Key 4" Target="RPC_SECRET" Default="" Mode="" Description="&#x5BB9;&#x5668; Variable: RPC_SECRET" Type="Variable" Display="always" Required="false" Mask="false">passwd</Config>
+  <Config Name="Host Key 5" Target="DISK_CACHE" Default="" Mode="" Description="&#x5BB9;&#x5668; Variable: DISK_CACHE" Type="Variable" Display="always" Required="false" Mask="false">1024M</Config>
+  <Config Name="config" Target="/config" Default="" Mode="rw" Description="&#x5BB9;&#x5668; Path: /config" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/aria2</Config>
+  <Config Name="Host Path 2" Target="/downloads" Default="" Mode="rw" Description="&#x5BB9;&#x5668; Path: /downloads" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/bt/downloads</Config>
+</Container>
