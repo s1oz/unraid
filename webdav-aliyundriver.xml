@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>webdav-aliyundriver</Name>
+  <Repository>zx5253/webdav-aliyundriver</Repository>
+  <Registry>https://hub.docker.com/r/zx5253/webdav-aliyundriver</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/zxbu/webdav-aliyundriver</Support>
+  <Project>https://github.com/zxbu/webdav-aliyundriver</Project>
+  <Overview>&#x672C;&#x9879;&#x76EE;&#x5B9E;&#x73B0;&#x4E86;&#x963F;&#x91CC;&#x4E91;&#x76D8;&#x7684;webdav&#x534F;&#x8BAE;&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x7B80;&#x5355;&#x7684;&#x914D;&#x7F6E;&#x4E00;&#x4E0B;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x8BA9;&#x963F;&#x91CC;&#x4E91;&#x76D8;&#x53D8;&#x8EAB;&#x4E3A;webdav&#x534F;&#x8BAE;&#x7684;&#x6587;&#x4EF6;&#x670D;&#x52A1;&#x5668;&#x3002; &#x57FA;&#x4E8E;&#x6B64;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x628A;&#x963F;&#x91CC;&#x4E91;&#x76D8;&#x6302;&#x8F7D;&#x4E3A;Windows&#x3001;Linux&#x3001;Mac&#x7CFB;&#x7EDF;&#x7684;&#x78C1;&#x76D8;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;NAS&#x7CFB;&#x7EDF;&#x505A;&#x6587;&#x4EF6;&#x7BA1;&#x7406;&#x6216;&#x6587;&#x4EF6;&#x540C;&#x6B65;&#xFF0C;&#x66F4;&#x591A;&#x73A9;&#x6CD5;&#x7B49;&#x4F60;&#x6316;&#x6398;</Overview>
+  <Category/>
+  <WebUI/>
+  <TemplateURL/>
+  <Icon>https://github.com/s1oz/unraid/raw/master/png/aliyun.png</Icon>
+  <ExtraParams>-d -m 2g</ExtraParams>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1627372130</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>&#x672C;&#x9879;&#x76EE;&#x5B9E;&#x73B0;&#x4E86;&#x963F;&#x91CC;&#x4E91;&#x76D8;&#x7684;webdav&#x534F;&#x8BAE;&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x7B80;&#x5355;&#x7684;&#x914D;&#x7F6E;&#x4E00;&#x4E0B;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x8BA9;&#x963F;&#x91CC;&#x4E91;&#x76D8;&#x53D8;&#x8EAB;&#x4E3A;webdav&#x534F;&#x8BAE;&#x7684;&#x6587;&#x4EF6;&#x670D;&#x52A1;&#x5668;&#x3002; &#x57FA;&#x4E8E;&#x6B64;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x628A;&#x963F;&#x91CC;&#x4E91;&#x76D8;&#x6302;&#x8F7D;&#x4E3A;Windows&#x3001;Linux&#x3001;Mac&#x7CFB;&#x7EDF;&#x7684;&#x78C1;&#x76D8;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;NAS&#x7CFB;&#x7EDF;&#x505A;&#x6587;&#x4EF6;&#x7BA1;&#x7406;&#x6216;&#x6587;&#x4EF6;&#x540C;&#x6B65;&#xFF0C;&#x66F4;&#x591A;&#x73A9;&#x6CD5;&#x7B49;&#x4F60;&#x6316;&#x6398;</Description>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>7999</HostPort>
+        <ContainerPort>8080</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/aliyun/etc/aliyun-driver</HostDir>
+      <ContainerDir>/etc/aliyun-driver</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value></Value>
+      <Name>ALIYUNDRIVE_REFRESH_TOKEN</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>true</Value>
+      <Name>ALIYUNDRIVE_AUTH_ENABLE</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value></Value>
+      <Name>ALIYUNDRIVE_AUTH_USER-NAME</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value></Value>
+      <Name>ALIYUNDRIVE_AUTH_PASSWORD</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="&#x963F;&#x91CC;&#x4E91;&#x76D8;&#x7684;refreshToken" Target="ALIYUNDRIVE_REFRESH_TOKEN" Default="" Mode="" Description="&#x963F;&#x91CC;&#x4E91;&#x76D8;&#x7684;refreshToken" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="&#x662F;&#x5426;&#x5F00;&#x542F;WebDav&#x8D26;&#x6237;&#x9A8C;&#x8BC1;" Target="ALIYUNDRIVE_AUTH_ENABLE" Default="" Mode="" Description="&#x662F;&#x5426;&#x5F00;&#x542F;WebDav&#x8D26;&#x6237;&#x9A8C;&#x8BC1;&#xFF0C;&#x9ED8;&#x8BA4;&#x5F00;&#x542F;" Type="Variable" Display="always" Required="false" Mask="false">true</Config>
+  <Config Name="WebDav&#x8D26;&#x6237;" Target="ALIYUNDRIVE_AUTH_USER-NAME" Default="" Mode="" Description="&#x9ED8;&#x8BA4;admin" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="WebDav&#x5BC6;&#x7801;" Target="ALIYUNDRIVE_AUTH_PASSWORD" Default="" Mode="" Description="&#x9ED8;&#x8BA4;admin" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="wedav&#x7AEF;&#x53E3;" Target="8080" Default="7999" Mode="tcp" Description="wedav&#x7AEF;&#x53E3;" Type="Port" Display="always" Required="false" Mask="false">7999</Config>
+  <Config Name="/etc/localtime" Target="/etc/aliyun-driver" Default="" Mode="rw" Description="/etc/aliyun-driver/ &#x6302;&#x8F7D;&#x5377;&#x81EA;&#x52A8;&#x7EF4;&#x62A4;&#x4E86;&#x6700;&#x65B0;&#x7684;refreshToken&#xFF0C;&#x5EFA;&#x8BAE;&#x6302;&#x8F7D;" Type="Path" Display="advanced" Required="false" Mask="false">/mnt/user/appdata/aliyun/etc/aliyun-driver</Config>
+</Container>

@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>transmission</Name>
+  <Repository>linuxserver/transmission:version-3.00-r2</Repository>
+  <Registry>https://hub.docker.com/r/linuxserver/transmission/</Registry>
+  <Network>br0</Network>
+  <MyIP>192.168.1.11</MyIP>
+  <Shell>bash</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://forums.unraid.net/topic/42352-support-linuxserverio-transmission/</Support>
+  <Project>http://www.transmissionbt.com/</Project>
+  <Overview>Transmission is designed for easy, powerful use. Transmission has the features you want from a BitTorrent client: encryption, a web interface, peer exchange, magnet links, DHT, &#xB5;TP, UPnP and NAT-PMP port forwarding, webseed support, watch directories, tracker editing, global and per-torrent speed limits, and more.</Overview>
+  <Category>Downloaders:</Category>
+  <WebUI>http://[IP]:[PORT:9091]/</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/transmission.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/transmission-icon.png</Icon>
+  <ExtraParams>--restart unless-stopped -m 10G</ExtraParams>
+  <PostArgs/>
+  <CPUset>0,1,2,3</CPUset>
+  <DateInstalled>1616312919</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>Transmission is designed for easy, powerful use. Transmission has the features you want from a BitTorrent client: encryption, a web interface, peer exchange, magnet links, DHT, &#xB5;TP, UPnP and NAT-PMP port forwarding, webseed support, watch directories, tracker editing, global and per-torrent speed limits, and more.</Description>
+  <Networking>
+    <Mode>br0</Mode>
+    <Publish>
+      <Port>
+        <HostPort>9091</HostPort>
+        <ContainerPort>9091</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/pt</HostDir>
+      <ContainerDir>/pt</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/pt/watch</HostDir>
+      <ContainerDir>/watch</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/transmission</HostDir>
+      <ContainerDir>/config</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value>1000</Value>
+      <Name>PUID</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>100</Value>
+      <Name>PGID</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>Asia/Shanghai</Value>
+      <Name>TZ</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>s1oz</Value>
+      <Name>USER</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>xxxxxx</Value>
+      <Name>PASS</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>/transmission-web-control/</Value>
+      <Name>TRANSMISSION_WEB_HOME</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="Host Port 1" Target="9091" Default="9091" Mode="tcp" Description="Container Port: 9091" Type="Port" Display="always" Required="true" Mask="false">9091</Config>
+  <Config Name="Host Path 2" Target="/pt" Default="" Mode="rw" Description="Container Path: /pt" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/pt</Config>
+  <Config Name="Host Path 3" Target="/watch" Default="" Mode="rw" Description="Container Path: /watch" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/pt/watch</Config>
+  <Config Name="Key 1" Target="PUID" Default="1000" Mode="" Description="Container Variable: PUID" Type="Variable" Display="always" Required="false" Mask="false">1000</Config>
+  <Config Name="Key 2" Target="PGID" Default="100" Mode="" Description="Container Variable: PGID" Type="Variable" Display="always" Required="false" Mask="false">100</Config>
+  <Config Name="TZ" Target="TZ" Default="" Mode="" Description="&#x5BB9;&#x5668; Variable: TZ" Type="Variable" Display="always" Required="false" Mask="false">Asia/Shanghai</Config>
+  <Config Name="Host Path 3" Target="USER" Default="" Mode="" Description="&#x5BB9;&#x5668; Path: USER" Type="Variable" Display="always" Required="false" Mask="false">s1oz</Config>
+  <Config Name="Host Key 5" Target="PASS" Default="" Mode="" Description="&#x5BB9;&#x5668; Variable: PASS" Type="Variable" Display="always" Required="false" Mask="false">xxxxxx</Config>
+  <Config Name="web" Target="TRANSMISSION_WEB_HOME" Default="" Mode="" Description="https://github.com/ronggang/transmission-web-control/wiki/Linux-Installation-CN" Type="Variable" Display="always" Required="false" Mask="false">/transmission-web-control/</Config>
+  <Config Name="AppData Config Path" Target="/config" Default="/mnt/user/appdata/transmission" Mode="rw" Description="Container Path: /config" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/transmission</Config>
+</Container>

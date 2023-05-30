@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>qee</Name>
+  <Repository>superng6/qbittorrentee</Repository>
+  <Registry>https://hub.docker.com/r/superng6/qbittorrentee</Registry>
+  <Network>host</Network>
+  <MyIP/>
+  <Shell>bash</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/SuperNG6/Docker-qBittorrent-Enhanced-Edition</Support>
+  <Project>https://github.com/SuperNG6/Docker-qBittorrent-Enhanced-Edition</Project>
+  <Overview>qBittorrent&#x589E;&#x5F3A;&#x7248;&#xFF0C;&#x9632;&#x5438;&#x8840;</Overview>
+  <Category>Downloaders:</Category>
+  <WebUI>http://[IP]:[PORT:8082]/</WebUI>
+  <TemplateURL/>
+  <Icon>https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/qbittorrent-icon.png</Icon>
+  <ExtraParams>-m 6G</ExtraParams>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1645604899</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>qBittorrent&#x589E;&#x5F3A;&#x7248;&#xFF0C;&#x9632;&#x5438;&#x8840;</Description>
+  <Networking>
+    <Mode>host</Mode>
+    <Publish/>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/bt</HostDir>
+      <ContainerDir>/downloads</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/qee</HostDir>
+      <ContainerDir>/config</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value>1000</Value>
+      <Name>UID</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>100</Value>
+      <Name>GID</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>8082</Value>
+      <Name>WEBUIPORT</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="qBittorrent&#x4E0B;&#x8F7D;&#x4F4D;&#x7F6E;" Target="/downloads" Default="" Mode="rw" Description="qBittorrent&#x4E0B;&#x8F7D;&#x4F4D;&#x7F6E;" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/shua/bt</Config>
+  <Config Name="qBittorrent&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4F4D;&#x7F6E;" Target="/config" Default="" Mode="rw" Description="qBittorrent&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4F4D;&#x7F6E;" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/qee</Config>
+  <Config Name="UID" Target="UID" Default="" Mode="" Description="&#x5BB9;&#x5668; Variable: UID" Type="Variable" Display="always" Required="false" Mask="false">1000</Config>
+  <Config Name="GID" Target="GID" Default="" Mode="" Description="&#x5BB9;&#x5668; Variable: GID" Type="Variable" Display="always" Required="false" Mask="false">100</Config>
+  <Config Name="web&#x8BBF;&#x95EE;&#x7AEF;&#x53E3;&#x73AF;&#x5883;&#x53D8;&#x91CF;" Target="WEBUIPORT" Default="8082" Mode="" Description="web&#x8BBF;&#x95EE;&#x7AEF;&#x53E3;&#x73AF;&#x5883;&#x53D8;&#x91CF;" Type="Variable" Display="always" Required="false" Mask="false">8082</Config>
+</Container>

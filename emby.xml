@@ -1,0 +1,107 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>emby</Name>
+  <Repository>emby/embyserver:beta</Repository>
+  <Registry>https://registry.hub.docker.com/r/emby/embyserver/</Registry>
+  <Network>br0</Network>
+  <MyIP>192.168.1.8</MyIP>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://lime-technology.com/forum/index.php?topic=45444.0</Support>
+  <Project/>
+  <Overview>&#xD;
+    Emby Server is a home media server built on top of other popular open source technologies such as Service Stack, jQuery, jQuery mobile, and Mono. Bringing together movies, music, television and more in one dazzling interface.&#xD;
+&#xD;
+&#xD;
+    Directories:&#xD;
+&#xD;
+    /config : this path is used to store Emby's configuration.&#xD;
+&#xD;
+    /mnt : this path is used to add library locations to Emby.&#xD;
+&#xD;
+emby/embyserver:latest&#xD;
+emby/embyserver:beta&#xD;
+</Overview>
+  <Category>MediaServer:Video MediaServer:Music MediaServer:Photos</Category>
+  <WebUI>http://[IP]:[PORT:8096]/</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/MediaBrowser/Emby.Build/master/unraid-templates/emby/EmbyServer.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/MediaBrowser/Emby.Resources/master/images/Logos/logoicon.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1634792106</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Requires/>
+  <Description>&#xD;
+    Emby Server is a home media server built on top of other popular open source technologies such as Service Stack, jQuery, jQuery mobile, and Mono. Bringing together movies, music, television and more in one dazzling interface.&#xD;
+&#xD;
+&#xD;
+    Directories:&#xD;
+&#xD;
+    /config : this path is used to store Emby's configuration.&#xD;
+&#xD;
+    /mnt : this path is used to add library locations to Emby.&#xD;
+&#xD;
+emby/embyserver:latest&#xD;
+emby/embyserver:beta&#xD;
+</Description>
+  <Networking>
+    <Mode>br0</Mode>
+    <Publish/>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/pt</HostDir>
+      <ContainerDir>/pt</ContainerDir>
+      <Mode>ro</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/bt</HostDir>
+      <ContainerDir>/bt</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/shua</HostDir>
+      <ContainerDir>/shua</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/EmbyServer</HostDir>
+      <ContainerDir>/config</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/pt/ca/ca-certificates.crt</HostDir>
+      <ContainerDir>/etc/ssl/certs/ca-certificates.crt</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value>0</Value>
+      <Name>UID</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>0</Value>
+      <Name>GID</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>0</Value>
+      <Name>GIDLIST</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="UID" Target="UID" Default="2" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">0</Config>
+  <Config Name="GID" Target="GID" Default="2" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">0</Config>
+  <Config Name="GIDLIST" Target="GIDLIST" Default="2" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">0</Config>
+  <Config Name="PT&#x8D44;&#x6E90;&#x76EE;&#x5F55;" Target="/pt" Default="" Mode="ro" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/pt</Config>
+  <Config Name="BT&#x8D44;&#x6E90;&#x76EE;&#x5F55;" Target="/bt" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/bt</Config>
+  <Config Name="&#x5237;&#x4E0A;&#x4F20;&#x8D44;&#x6E90;&#x76EE;&#x5F55;" Target="/shua" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/shua</Config>
+  <Config Name="&#x6838;&#x663E;" Target="" Default="" Mode="" Description="" Type="Device" Display="always" Required="false" Mask="false">/dev/dri</Config>
+  <Config Name="AppData Config Path" Target="/config" Default="/mnt/user/appdata/EmbyServer" Mode="rw" Description="" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/EmbyServer</Config>
+  <Config Name="ca-certificates.crt" Target="/etc/ssl/certs/ca-certificates.crt" Default="" Mode="rw" Description="" Type="Path" Display="advanced" Required="false" Mask="false">/mnt/user/pt/ca/ca-certificates.crt</Config>
+</Container>

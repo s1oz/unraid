@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>openwrt</Name>
+  <Repository>sulinggg/openwrt:x86_64</Repository>
+  <Registry>https://hub.docker.com/r/sulinggg/openwrt</Registry>
+  <Network>br0</Network>
+  <MyIP>192.168.1.155</MyIP>
+  <Shell>bash</Shell>
+  <Privileged>true</Privileged>
+  <Support>https://mlapp.cn/376.html</Support>
+  <Project>https://hub.docker.com/r/sulinggg/openwrt</Project>
+  <Overview>&#x4FEE;&#x6539;br0&#x4E2D;&#x6240;&#x9700;&#x8981;&#x8BBE;&#x7F6E;&#x7684;&#x65C1;&#x8DEF;&#x7531;&#x56FA;&#x5B9A; IP &#x5730;&#x5740;&#xD;
+#&#x4FEE;&#x6539;ip&#x4E3A;&#x521A;&#x8BBE;&#x7F6E;&#x7684;&#x56FA;&#x5B9A; IP &#x5730;&#x5740;&#x4EE5;&#x53CA;&#x7F51;&#x5173;&#x4EE5;&#x53CA;dns&#xD;
+vim /etc/config/network&#xD;
+#&#x91CD;&#x542F;&#x7F51;&#x7EDC;&#xD;
+/etc/init.d/network restart&#xD;
+&#xD;
+#&#x611F;&#x8C22;sulinggg&#x7684; OpenWrt &#x955C;&#x50CF; (&#x6BCF;&#x65E5;&#x66F4;&#x65B0;)&#x3002;</Overview>
+  <Category/>
+  <WebUI>http://[IP]:[PORT:80]/</WebUI>
+  <TemplateURL/>
+  <Icon>https://github.com/s1oz/unraid/raw/master/png/openwrt.png</Icon>
+  <ExtraParams>-d --restart always</ExtraParams>
+  <PostArgs>/sbin/init</PostArgs>
+  <CPUset/>
+  <DateInstalled>1629073666</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Requires/>
+  <Description>&#x4FEE;&#x6539;br0&#x4E2D;&#x6240;&#x9700;&#x8981;&#x8BBE;&#x7F6E;&#x7684;&#x65C1;&#x8DEF;&#x7531;&#x56FA;&#x5B9A; IP &#x5730;&#x5740;&#xD;
+#&#x4FEE;&#x6539;ip&#x4E3A;&#x521A;&#x8BBE;&#x7F6E;&#x7684;&#x56FA;&#x5B9A; IP &#x5730;&#x5740;&#x4EE5;&#x53CA;&#x7F51;&#x5173;&#x4EE5;&#x53CA;dns&#xD;
+vim /etc/config/network&#xD;
+#&#x91CD;&#x542F;&#x7F51;&#x7EDC;&#xD;
+/etc/init.d/network restart&#xD;
+&#xD;
+#&#x611F;&#x8C22;sulinggg&#x7684; OpenWrt &#x955C;&#x50CF; (&#x6BCF;&#x65E5;&#x66F4;&#x65B0;)&#x3002;</Description>
+  <Networking>
+    <Mode>br0</Mode>
+    <Publish/>
+  </Networking>
+  <Data/>
+  <Environment/>
+  <Labels/>
+</Container>

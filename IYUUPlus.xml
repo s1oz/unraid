@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>IYUUPlus</Name>
+  <Repository>iyuucn/iyuuplus:latest</Repository>
+  <Registry/>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support/>
+  <Project/>
+  <Overview>IYUUAutoReseed&#x9879;&#x76EE;&#x7684;&#x5347;&#x7EA7;&#x7248;&#xFF0C;&#x5E38;&#x9A7B;&#x5185;&#x5B58;&#x8FD0;&#x884C;&#xFF1B;&#x96C6;&#x6210;webui&#x754C;&#x9762;&#x3001;&#x8F85;&#x79CD;&#x3001;&#x4E0B;&#x8F7D;&#x3001;&#x5B9A;&#x65F6;&#x8BBF;&#x95EE;URL&#x3001;&#x52A8;&#x6001;&#x57DF;&#x540D;ddns&#x7B49;&#x5E38;&#x7528;&#x529F;&#x80FD;&#xFF0C;&#x63D0;&#x4F9B;&#x5B8C;&#x5584;&#x7684;&#x63D2;&#x4EF6;&#x673A;&#x5236;&#x3002; </Overview>
+  <Category>HomeAutomation: Tools:</Category>
+  <WebUI>http://[IP]:[PORT:8787]/</WebUI>
+  <TemplateURL/>
+  <Icon>https://raw.githubusercontent.com/s1oz/unraid/main/png/iyuu.png</Icon>
+  <ExtraParams>-d -e cron='0 9 * * 0' --restart=always</ExtraParams>
+  <PostArgs/>
+  <CPUset>4,5</CPUset>
+  <DateInstalled>1616310558</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>IYUUAutoReseed&#x9879;&#x76EE;&#x7684;&#x5347;&#x7EA7;&#x7248;&#xFF0C;&#x5E38;&#x9A7B;&#x5185;&#x5B58;&#x8FD0;&#x884C;&#xFF1B;&#x96C6;&#x6210;webui&#x754C;&#x9762;&#x3001;&#x8F85;&#x79CD;&#x3001;&#x4E0B;&#x8F7D;&#x3001;&#x5B9A;&#x65F6;&#x8BBF;&#x95EE;URL&#x3001;&#x52A8;&#x6001;&#x57DF;&#x540D;ddns&#x7B49;&#x5E38;&#x7528;&#x529F;&#x80FD;&#xFF0C;&#x63D0;&#x4F9B;&#x5B8C;&#x5584;&#x7684;&#x63D2;&#x4EF6;&#x673A;&#x5236;&#x3002; </Description>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>8787</HostPort>
+        <ContainerPort>8787</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/IYUU/db</HostDir>
+      <ContainerDir>/IYUU/db</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/qbittorrent/data/qBittorrent/BT_backup/</HostDir>
+      <ContainerDir>/mnt/user/appdata/qbittorrent/data/qBittorrent/BT_backup/</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/transmission/torrents/</HostDir>
+      <ContainerDir>/mnt/user/appdata/transmission/torrents/</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/pt</HostDir>
+      <ContainerDir>/pt</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value>1000</Value>
+      <Name>PUID</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>100</Value>
+      <Name>PGID</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="PUID" Target="PUID" Default="" Mode="" Description="&#x5BB9;&#x5668; Variable: PUID" Type="Variable" Display="always" Required="false" Mask="false">1000</Config>
+  <Config Name="PGID" Target="PGID" Default="" Mode="" Description="&#x5BB9;&#x5668; Variable: PGID" Type="Variable" Display="always" Required="false" Mask="false">100</Config>
+  <Config Name="Host Path 1" Target="/IYUU/db" Default="" Mode="rw" Description="&#x5BB9;&#x5668; Path: /IYUU/db" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/IYUU/db</Config>
+  <Config Name="web" Target="8787" Default="8787" Mode="tcp" Description="&#x5BB9;&#x5668; Port: " Type="Port" Display="always" Required="false" Mask="false">8787</Config>
+  <Config Name="BT_backup" Target="/mnt/user/appdata/qbittorrent/data/qBittorrent/BT_backup/" Default="" Mode="rw" Description="&#x5BB9;&#x5668; Path: /BT_backup" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/qbittorrent/data/qBittorrent/BT_backup/</Config>
+  <Config Name="torrents" Target="/mnt/user/appdata/transmission/torrents/" Default="" Mode="rw" Description="&#x5BB9;&#x5668; Path: /torrents" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/transmission/torrents/</Config>
+  <Config Name="Host Path 4" Target="/pt" Default="" Mode="rw" Description="&#x5BB9;&#x5668; Path: /pt" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/pt</Config>
+</Container>

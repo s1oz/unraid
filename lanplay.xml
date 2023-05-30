@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>switch-lan-play-client</Name>
+  <Repository>s1oz/lanplay</Repository>
+  <Registry>https://hub.docker.com/r/s1oz/lanplay</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://hub.docker.com/r/s1oz/lanplay</Support>
+  <Project>https://hub.docker.com/r/s1oz/lanplay</Project>
+  <Overview>server&#x4E2D;&#x586B;&#x5165;&#x8282;&#x70B9;</Overview>
+  <Category>GameServers:</Category>
+  <WebUI/>
+  <TemplateURL/>
+  <Icon>https://d36jcksde1wxzq.cloudfront.net/be7833db9bddb4494d2a7c3dd659199a.png</Icon>
+  <ExtraParams>-d</ExtraParams>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1641632675</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Requires/>
+  <Config Name="server" Target="server" Default="" Mode="" Description="&#x586B;&#x5165;&#x8282;&#x70B9;&#x670D;&#x52A1;&#x5668;&#x5730;&#x5740; (&#x5730;&#x5740;:&#x7AEF;&#x53E3;)" Type="Variable" Display="always" Required="false" Mask="false">xxxxxx</Config>
+</Container>

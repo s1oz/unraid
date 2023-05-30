@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>subconverter</Name>
+  <Repository>tindy2013/subconverter</Repository>
+  <Registry>https://hub.docker.com/r/tindy2013/subconverter</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/tindy2013/subconverter/blob/master/README-docker.md</Support>
+  <Project>https://github.com/tindy2013/subconverter</Project>
+  <Overview>&#x5728;&#x5404;&#x79CD;&#x8BA2;&#x9605;&#x683C;&#x5F0F;&#x4E4B;&#x95F4;&#x8FDB;&#x884C;&#x8F6C;&#x6362;&#x7684;&#x5B9E;&#x7528;&#x7A0B;&#x5E8F;&#xD;
+&#x521B;&#x5EFA;&#x540E;&#x8FD0;&#x884C;&#x6B64;&#x547D;&#x4EE4;&#x53EF;&#x6D4B;&#x8BD5;&#xD;
+curl http://localhost:25500/version&#xD;
+&#x5982;&#x679C;&#x51FA;&#x73B0; subconverter vx.x.x backend &#x5219;&#x8BF4;&#x660E;&#x5BB9;&#x5668;&#x5DF2;&#x7ECF;&#x6210;&#x529F;&#x8FD0;&#x884C;</Overview>
+  <Category>Tools:</Category>
+  <WebUI/>
+  <TemplateURL/>
+  <Icon>https://d36jcksde1wxzq.cloudfront.net/be7833db9bddb4494d2a7c3dd659199a.png</Icon>
+  <ExtraParams>-d</ExtraParams>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1640244720</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Requires/>
+  <Config Name="API&#x7AEF;&#x53E3;" Target="25500" Default="" Mode="tcp" Description="" Type="Port" Display="always" Required="false" Mask="false">25500</Config>
+</Container>

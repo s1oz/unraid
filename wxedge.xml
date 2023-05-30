@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>wxedge</Name>
+  <Repository>onething1/wxedge</Repository>
+  <Registry>https://hub.docker.com/r/onething1/wxedge/</Registry>
+  <Network>host</Network>
+  <MyIP/>
+  <Shell>bash</Shell>
+  <Privileged>true</Privileged>
+  <Support>https://hub.docker.com/r/onething1/wxedge/</Support>
+  <Project/>
+  <Overview>&#x7F51;&#x5FC3;&#x4E91;&#x5BB9;&#x5668;&#x9B54;&#x65B9;&#x81EA;&#x9002;&#x5E94;cpu&#x67B6;&#x6784;&#xFF08;&#x63A8;&#x8350;&#xFF09;   Converted By Community Applications   Always verify this template (and values) against the dockerhub support page for the container</Overview>
+  <Category/>
+  <WebUI/>
+  <TemplateURL/>
+  <Icon>https://d36jcksde1wxzq.cloudfront.net/be7833db9bddb4494d2a7c3dd659199a.png</Icon>
+  <ExtraParams>--tmpfs /run --tmpfs /tmp --restart=always -m 10G</ExtraParams>
+  <PostArgs/>
+  <CPUset>0,1,2,3,4,5,6,7</CPUset>
+  <DateInstalled>1630054106</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Requires/>
+  <Description>&#x7F51;&#x5FC3;&#x4E91;&#x5BB9;&#x5668;&#x9B54;&#x65B9;&#x81EA;&#x9002;&#x5E94;cpu&#x67B6;&#x6784;&#xFF08;&#x63A8;&#x8350;&#xFF09;   Converted By Community Applications   Always verify this template (and values) against the dockerhub support page for the container</Description>
+  <Networking>
+    <Mode>host</Mode>
+    <Publish/>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/wxedge_storage/</HostDir>
+      <ContainerDir>/storage</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment/>
+  <Labels/>
+  <Config Name="&#x7F13;&#x5B58;&#x8DEF;&#x5F84;" Target="/storage" Default="" Mode="rw" Description="&#x7F13;&#x5B58;&#x8DEF;&#x5F84;" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/wxedge_storage/</Config>
+</Container>

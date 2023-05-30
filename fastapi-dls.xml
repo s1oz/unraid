@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>FastAPI-DLS</Name>
+  <Repository>makedie/fastapi-dls</Repository>
+  <Registry>https://hub.docker.com/r/makedie/fastapi-dls</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support/>
+  <Project>https://gitea.publichub.eu/oscar.krause/fastapi-dls</Project>
+  <Overview/>
+  <Category>Tools:</Category>
+  <WebUI>https://[IP]:[PORT:9443]</WebUI>
+  <TemplateURL/>
+  <Icon>https://git.collinwebdesigns.de/uploads/-/system/project/avatar/106/png-transparent-nvidia-grid-logo-business-nvidia-electronics-text-trademark.png?width=64</Icon>
+  <ExtraParams>--restart always</ExtraParams>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1685103020</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Requires/>
+  <Config Name="DLS_URL" Target="DLS_URL" Default="" Mode="" Description="&#x8F93;&#x5165;&#x5BB9;&#x5668;&#x7684; IP&#xFF08;&#x5982;&#x679C;&#x5171;&#x4EAB;&#xFF0C;&#x5219;&#x8F93;&#x5165;&#x4E3B;&#x673A;&#x7684; IP&#xFF09;" Type="Variable" Display="always" Required="false" Mask="false">192.168.1.10</Config>
+  <Config Name="DLS_PORT" Target="DLS_PORT" Default="9443" Mode="" Description="&#x5B9A;&#x4E49;HTTPS&#x7AEF;&#x53E3;" Type="Variable" Display="always" Required="false" Mask="false">9443</Config>
+  <Config Name="&#x6620;&#x5C04;&#x7AEF;&#x53E3;" Target="443" Default="" Mode="tcp" Description="&#x7528;&#x4E8E;&#x8BBF;&#x95EE;&#x7684;HTTPS&#x7AEF;&#x53E3;&#xFF0C;&#x8DDF;DLS_PORT&#x76F8;&#x540C;" Type="Port" Display="always" Required="false" Mask="false">9443</Config>
+  <Config Name="Host Key 3" Target="TZ" Default="" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">Asia/Shanghai</Config>
+</Container>

@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>kodexplorer</Name>
+  <Repository>s1oz/kodexplorer:latest</Repository>
+  <Registry>https://hub.docker.com/r/s1oz/kodexplorer</Registry>
+  <Network>host</Network>
+  <MyIP/>
+  <Shell>shell</Shell>
+  <Privileged>true</Privileged>
+  <Support>https://hub.docker.com/r/s1oz/kodexplorer</Support>
+  <Project>https://hub.docker.com/r/s1oz/kodexplorer</Project>
+  <Overview>&#x53EF;&#x9053;&#x4E91;</Overview>
+  <Category>Cloud: Tools: MediaApp:Video MediaApp:Music MediaApp:Photos Status:Stable</Category>
+  <WebUI>http://[IP]:[PORT:28083]</WebUI>
+  <TemplateURL/>
+  <Icon>https://raw.githubusercontent.com/s1oz/unraid/main/png/kod.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1648805204</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>&#x53EF;&#x9053;&#x4E91;</Description>
+  <Networking>
+    <Mode>host</Mode>
+    <Publish>
+      <Port>
+        <HostPort>28083</HostPort>
+        <ContainerPort>28083</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/</HostDir>
+      <ContainerDir>/koddata/Group/public/home/unraid</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/kodexplorer</HostDir>
+      <ContainerDir>/koddata</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment/>
+  <Labels/>
+  <Config Name="WebUI&#x7AEF;&#x53E3;" Target="28083" Default="" Mode="tcp" Description="WebUI&#x7AEF;&#x53E3;" Type="Port" Display="always" Required="false" Mask="false">28083</Config>
+  <Config Name="&#x6302;&#x8F7D;&#x8DEF;&#x5F84;" Target="/koddata/Group/public/home/unraid" Default="" Mode="rw" Description="&#x5BB9;&#x5668;&#x8DEF;&#x5F84;&#x4E3A;/koddata/Group/public/home/xxx&#13;&#10;&#x4EE5;&#x6B64;&#x7C7B;&#x63A8;" Type="Path" Display="always" Required="true" Mask="false">/mnt/</Config>
+  <Config Name="&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x76EE;&#x5F55;" Target="/koddata" Default="" Mode="rw" Description="&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x76EE;&#x5F55;" Type="Path" Display="advanced" Required="false" Mask="false">/mnt/user/appdata/kodexplorer</Config>
+</Container>

@@ -1,0 +1,178 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>qinglong</Name>
+  <Repository>whyour/qinglong:latest</Repository>
+  <Registry>https://hub.docker.com/r/whyour/qinglong</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>bash</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/whyour/qinglong</Support>
+  <Project>https://github.com/whyour/qinglong</Project>
+  <Overview>&#x521D;&#x6B21;&#x8BBF;&#x95EE; http://&amp;lt;&#x81EA;&#x5DF1;ip&amp;gt;:5700&#xD;
+&#x4F7F;&#x7528; admin/adminadmin &#x767B;&#x9646;&#xFF0C;&#x63D0;&#x793A;&#x5DF2;&#x521D;&#x59CB;&#x5316;&#x5BC6;&#x7801;&#xD;
+&#x53BB;&#x81EA;&#x5DF1;&#x6620;&#x5C04;&#x76EE;&#x5F55;config&#x4E0B;&#x627E; auth.json&#xFF0C;&#x67E5;&#x770B;&#x91CC;&#x9762;&#x7684; password&#xD;
+docker exec -it qinglong cat /ql/config/auth.json&#xD;
+&#xD;
+&#x4E00;&#x952E;&#x914D;&#x7F6E;&#xD;
+docker exec -it qinglong bash -c "$(curl -fsSL https://raw.githubusercontents.com/Oreomeow/VIP/main/Scripts/sh/1customCDN.sh)"&#xD;
+&#xD;
+&#x66F4;&#x65B0;&#x9752;&#x9F99;&#xD;
+docker exec -it qinglong ql update&#xD;
+&#xD;
+&#x66F4;&#x65B0;&#x9752;&#x9F99;&#x5E76;&#x7F16;&#x8BD1;&#xD;
+docker exec -it qinglong ql restart&#xD;
+&#xD;
+&#x62C9;&#x53D6;&#x81EA;&#x5B9A;&#x4E49;&#x4ED3;&#x5E93;&#xD;
+docker exec -it qinglong ql repo https://ghproxy.com/https://github.com/whyour/hundun.git "quanx" "tokens|caiyun|didi|donate|fold|Env"&#xD;
+&#xD;
+&#x62C9;&#x53D6;&#x5355;&#x4E2A;&#x811A;&#x672C;&#xD;
+docker exec -it qinglong ql raw https://ghproxy.com/https://raw.githubusercontent.com/moposmall/Script/main/Me/jx_cfd.js&#xD;
+&#xD;
+&#x5220;&#x9664;7&#x5929;&#x524D;&#x7684;&#x6240;&#x6709;&#x65E5;&#x5FD7;&#xD;
+docker exec -it qinglong ql rmlog 7&#xD;
+&#xD;
+&#x542F;&#x52A8;bot&#xD;
+docker exec -it qinglong ql bot&#xD;
+&#xD;
+&#x5BFC;&#x51FA;&#x4E92;&#x52A9;&#x7801;&#xD;
+docker exec -it qinglong ql code&#xD;
+&#xD;
+&#x901A;&#x77E5;&#x6D4B;&#x8BD5;&#xD;
+docker exec -it qinglong notify test test&#xD;
+&#xD;
+&#x7ACB;&#x5373;&#x6267;&#x884C;&#x811A;&#x672C;&#xD;
+docker exec -it qinglong task test.js now&#xD;
+&#xD;
+&#x5E76;&#x884C;&#x6267;&#x884C;&#x811A;&#x672C;&#xD;
+docker exec -it qinglong task test.js conc</Overview>
+  <Category>Productivity:</Category>
+  <WebUI>http://[IP]:[PORT:5776]/</WebUI>
+  <TemplateURL/>
+  <Icon>https://raw.githubusercontent.com/s1oz/unraid/main/jd.png</Icon>
+  <ExtraParams>-dit</ExtraParams>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1627437342</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>&#x521D;&#x6B21;&#x8BBF;&#x95EE; http://&amp;lt;&#x81EA;&#x5DF1;ip&amp;gt;:5700&#xD;
+&#x4F7F;&#x7528; admin/adminadmin &#x767B;&#x9646;&#xFF0C;&#x63D0;&#x793A;&#x5DF2;&#x521D;&#x59CB;&#x5316;&#x5BC6;&#x7801;&#xD;
+&#x53BB;&#x81EA;&#x5DF1;&#x6620;&#x5C04;&#x76EE;&#x5F55;config&#x4E0B;&#x627E; auth.json&#xFF0C;&#x67E5;&#x770B;&#x91CC;&#x9762;&#x7684; password&#xD;
+docker exec -it qinglong cat /ql/config/auth.json&#xD;
+&#xD;
+&#x4E00;&#x952E;&#x914D;&#x7F6E;&#xD;
+docker exec -it qinglong bash -c "$(curl -fsSL https://raw.githubusercontents.com/Oreomeow/VIP/main/Scripts/sh/1customCDN.sh)"&#xD;
+&#xD;
+&#x66F4;&#x65B0;&#x9752;&#x9F99;&#xD;
+docker exec -it qinglong ql update&#xD;
+&#xD;
+&#x66F4;&#x65B0;&#x9752;&#x9F99;&#x5E76;&#x7F16;&#x8BD1;&#xD;
+docker exec -it qinglong ql restart&#xD;
+&#xD;
+&#x62C9;&#x53D6;&#x81EA;&#x5B9A;&#x4E49;&#x4ED3;&#x5E93;&#xD;
+docker exec -it qinglong ql repo https://ghproxy.com/https://github.com/whyour/hundun.git "quanx" "tokens|caiyun|didi|donate|fold|Env"&#xD;
+&#xD;
+&#x62C9;&#x53D6;&#x5355;&#x4E2A;&#x811A;&#x672C;&#xD;
+docker exec -it qinglong ql raw https://ghproxy.com/https://raw.githubusercontent.com/moposmall/Script/main/Me/jx_cfd.js&#xD;
+&#xD;
+&#x5220;&#x9664;7&#x5929;&#x524D;&#x7684;&#x6240;&#x6709;&#x65E5;&#x5FD7;&#xD;
+docker exec -it qinglong ql rmlog 7&#xD;
+&#xD;
+&#x542F;&#x52A8;bot&#xD;
+docker exec -it qinglong ql bot&#xD;
+&#xD;
+&#x5BFC;&#x51FA;&#x4E92;&#x52A9;&#x7801;&#xD;
+docker exec -it qinglong ql code&#xD;
+&#xD;
+&#x901A;&#x77E5;&#x6D4B;&#x8BD5;&#xD;
+docker exec -it qinglong notify test test&#xD;
+&#xD;
+&#x7ACB;&#x5373;&#x6267;&#x884C;&#x811A;&#x672C;&#xD;
+docker exec -it qinglong task test.js now&#xD;
+&#xD;
+&#x5E76;&#x884C;&#x6267;&#x884C;&#x811A;&#x672C;&#xD;
+docker exec -it qinglong task test.js conc</Description>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>5776</HostPort>
+        <ContainerPort>5700</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>5777</HostPort>
+        <ContainerPort>5701</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/ql/config</HostDir>
+      <ContainerDir>/ql/config</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/ql/log</HostDir>
+      <ContainerDir>/ql/log</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/ql/db</HostDir>
+      <ContainerDir>/ql/db</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/ql/scripts</HostDir>
+      <ContainerDir>/ql/scripts</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/ql/repo</HostDir>
+      <ContainerDir>/ql/repo</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/ql/raw</HostDir>
+      <ContainerDir>/ql/raw</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/ql/jbot</HostDir>
+      <ContainerDir>/ql/jbot</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/ql/ninja</HostDir>
+      <ContainerDir>/ql/ninja</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value>true</Value>
+      <Name>ENABLE_HANGUP</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>true</Value>
+      <Name> ENABLE_WEB_PANEL</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="config" Target="/ql/config" Default="" Mode="rw" Description="config" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/ql/config</Config>
+  <Config Name="log" Target="/ql/log" Default="" Mode="rw" Description="log" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/ql/log</Config>
+  <Config Name="db" Target="/ql/db" Default="" Mode="rw" Description="db" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/ql/db</Config>
+  <Config Name="&#x9762;&#x677F;&#x7AEF;&#x53E3;" Target="5700" Default="" Mode="tcp" Description="&#x9762;&#x677F;&#x7AEF;&#x53E3;" Type="Port" Display="always" Required="false" Mask="false">5776</Config>
+  <Config Name="scripts" Target="/ql/scripts" Default="" Mode="rw" Description="&#x5BB9;&#x5668; Path: /ql/scripts" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/ql/scripts</Config>
+  <Config Name="repo" Target="/ql/repo" Default="" Mode="rw" Description="repo" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/ql/repo</Config>
+  <Config Name="raw" Target="/ql/raw" Default="" Mode="rw" Description="raw" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/ql/raw</Config>
+  <Config Name="JDC&#x7AEF;&#x53E3;" Target="5701" Default="" Mode="tcp" Description="JDC&#x7AEF;&#x53E3;" Type="Port" Display="always" Required="false" Mask="false">5777</Config>
+  <Config Name="&#x6302;&#x673A;" Target="ENABLE_HANGUP" Default="" Mode="" Description="&#x662F;&#x5426;&#x5F00;&#x542F;&#x6302;&#x673A;" Type="Variable" Display="always" Required="false" Mask="false">true</Config>
+  <Config Name="&#x5F00;&#x542F;&#x9762;&#x677F;" Target=" ENABLE_WEB_PANEL" Default="" Mode="" Description="&#x662F;&#x5426;&#x5F00;&#x542F;&#x9762;&#x677F;" Type="Variable" Display="always" Required="false" Mask="false">true</Config>
+  <Config Name="jbot" Target="/ql/jbot" Default="" Mode="rw" Description="jbot" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/ql/jbot</Config>
+  <Config Name="ninja" Target="/ql/ninja" Default="" Mode="rw" Description="ninja" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/ql/ninja</Config>
+</Container>

@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>speedtest</Name>
+  <Repository>adolfintel/speedtest</Repository>
+  <Registry>https://hub.docker.com/r/adolfintel/speedtest/</Registry>
+  <Network>br0</Network>
+  <MyIP>192.168.1.9</MyIP>
+  <Shell>bash</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://forums.unraid.net/topic/72033-support-digiblurs-docker-template-repository/</Support>
+  <Project/>
+  <Overview>Self-hosted HTML5 Speedtest Docker Container&#xD;
+&#xD;
+Great for troubleshooting bandwidth, ping and jitter issues through a reverse proxy with unRaid.</Overview>
+  <Category>Network:Management Tools:</Category>
+  <WebUI>http://[IP]:[PORT:80]</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/digiblur/unraid-docker-templates/master/speedtest.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/digiblur/unraid-docker-templates/master/images/speedtest_icon.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1627374893</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>Self-hosted HTML5 Speedtest Docker Container&#xD;
+&#xD;
+Great for troubleshooting bandwidth, ping and jitter issues through a reverse proxy with unRaid.</Description>
+  <Networking>
+    <Mode>br0</Mode>
+    <Publish/>
+  </Networking>
+  <Data/>
+  <Environment/>
+  <Labels/>
+</Container>

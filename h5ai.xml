@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>h5ai</Name>
+  <Repository>ilemonrain/h5ai</Repository>
+  <Registry>https://hub.docker.com/r/ilemonrain/h5ai/</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>bash</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://hub.docker.com/r/ilemonrain/h5ai/</Support>
+  <Project/>
+  <Overview>Docker h5ai Images   Converted By Community Applications   Always verify this template (and values) against the dockerhub support page for the container</Overview>
+  <Category/>
+  <WebUI>http://[IP]:[PORT:8666]/</WebUI>
+  <TemplateURL/>
+  <Icon>https://d36jcksde1wxzq.cloudfront.net/be7833db9bddb4494d2a7c3dd659199a.png</Icon>
+  <ExtraParams>-d</ExtraParams>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1627371863</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>Docker h5ai Images   Converted By Community Applications   Always verify this template (and values) against the dockerhub support page for the container</Description>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>8666</HostPort>
+        <ContainerPort>80</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/files/h5ai</HostDir>
+      <ContainerDir>/h5ai</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment/>
+  <Labels/>
+  <Config Name="&#x6620;&#x5C04;&#x76EE;&#x5F55;" Target="/h5ai" Default="" Mode="rw" Description="&#x6620;&#x5C04;&#x76EE;&#x5F55;" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/files/h5ai</Config>
+  <Config Name="&#x7AEF;&#x53E3;" Target="80" Default="" Mode="tcp" Description="&#x7AEF;&#x53E3;" Type="Port" Display="always" Required="false" Mask="false">8666</Config>
+</Container>

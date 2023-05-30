@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>Clouddrive</Name>
+  <Repository>cloudnas/clouddrive</Repository>
+  <Registry>https://hub.docker.com/r/cloudnas/clouddrive</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>true</Privileged>
+  <Support/>
+  <Project/>
+  <Overview>CloudDrive&#xD;
+Clouddrive mounts cloud storage services as local file system.&#xD;
+&#xD;
+Supported Cloud Storages&#xD;
+115.com&#xD;
+cloud.189.cn&#xD;
+wocloud.com.cn&#xD;
+aliyundrive.com&#xD;
+WebDAV&#xD;
+...</Overview>
+  <Category>Tools:</Category>
+  <WebUI>http://[IP]:[PORT:9798]/</WebUI>
+  <TemplateURL/>
+  <Icon>https://raw.githubusercontent.com/s1oz/unraid/master/png/clouddrive.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1654227944</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Requires/>
+  <Config Name="webui" Target="9798" Default="9798" Mode="tcp" Description="web&#x8BBF;&#x95EE;&#x7AEF;&#x53E3;" Type="Port" Display="always" Required="false" Mask="false">9798</Config>
+  <Config Name="Shared" Target="/CloudNAS" Default="/mnt/user/File_Shared/" Mode="rw,shared" Description="&#x586B;&#x5199;&#x9700;&#x8981;&#x6302;&#x8F7D;&#x5230;&#x672C;&#x5730;&#x7684;&#x8DEF;&#x5F84;" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/File_Shared/</Config>
+  <Config Name="FuseUID" Target="FuseUID" Default="99" Mode="" Description="" Type="Variable" Display="advanced-hide" Required="false" Mask="false">99</Config>
+  <Config Name="FuseGID" Target="FuseGID" Default="100" Mode="" Description="" Type="Variable" Display="advanced-hide" Required="false" Mask="false">100</Config>
+  <Config Name="/dev/fuse" Target="" Default="" Mode="" Description="" Type="Device" Display="advanced-hide" Required="false" Mask="false">/dev/fuse</Config>
+  <Config Name="Config" Target="/Config" Default="/mnt/user/appdata/Clouddrive" Mode="rw" Description="" Type="Path" Display="advanced-hide" Required="false" Mask="false">/mnt/user/appdata/Clouddrive</Config>
+</Container>

@@ -1,0 +1,130 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>qb</Name>
+  <Repository>nevinee/qbittorrent:4.3.7</Repository>
+  <Registry>https://hub.docker.com/r/nevinee/qbittorrent</Registry>
+  <Network>br0</Network>
+  <MyIP>192.168.1.11</MyIP>
+  <Shell>bash</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://forums.unraid.net/topic/59191-support-linuxserverio-qbittorrent/</Support>
+  <Project>https://www.qbittorrent.org</Project>
+  <Overview>The qBittorrent project aims to provide an open-source software alternative to &#xB5;Torrent. qBittorrent is based on the Qt toolkit and libtorrent-rasterbar library.</Overview>
+  <Category>Downloaders:</Category>
+  <WebUI>http://[192.168.1.11]:[PORT:8888]/</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/qbittorrent.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/qbittorrent-icon.png</Icon>
+  <ExtraParams>-m 8G --restart unless-stopped</ExtraParams>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1634362272</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Requires/>
+  <Description>The qBittorrent project aims to provide an open-source software alternative to &#xB5;Torrent. qBittorrent is based on the Qt toolkit and libtorrent-rasterbar library.</Description>
+  <Networking>
+    <Mode>br0</Mode>
+    <Publish/>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/shua</HostDir>
+      <ContainerDir>/shua</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/pt</HostDir>
+      <ContainerDir>/pt</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/qb</HostDir>
+      <ContainerDir>/data</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value>1000</Value>
+      <Name>PUID</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>100</Value>
+      <Name>PGID</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>Asia/Shanghai</Value>
+      <Name>TZ</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>8888</Value>
+      <Name>WEBUI_PORT</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>55555</Value>
+      <Name>BT_PORT</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>false</Value>
+      <Name>ENABLE_AUTO_CATEGORY</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>true</Value>
+      <Name>DL_FINISH_NOTIFY</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>400</Value>
+      <Name>TRACKER_ERROR_COUNT_MIN</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>000</Value>
+      <Name>UMASK_SET</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>xxxxxx</Value>
+      <Name>IYUU_TOKEN</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value/>
+      <Name>SCKEY</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>12 * * * *</Value>
+      <Name>CRON_HEALTH_CHECK</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>30 11 * * *</Value>
+      <Name>CRON_TRACKER_ERROR</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="PUID" Target="PUID" Default="" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">1000</Config>
+  <Config Name="PGID" Target="PGID" Default="" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">100</Config>
+  <Config Name="&#x5237;&#x6570;&#x636E;&#x786C;&#x76D8;" Target="/shua" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/shua</Config>
+  <Config Name="&#x65F6;&#x533A;" Target="TZ" Default="" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">Asia/Shanghai</Config>
+  <Config Name="PT&#x6587;&#x4EF6;&#x5939;" Target="/pt" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/pt</Config>
+  <Config Name="WebUI&#x8BBF;&#x95EE;&#x7AEF;&#x53E3;" Target="WEBUI_PORT" Default="" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">8888</Config>
+  <Config Name="BT&#x76D1;&#x542C;&#x7AEF;&#x53E3;" Target="BT_PORT" Default="" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">55555</Config>
+  <Config Name="&#x662F;&#x5426;&#x81EA;&#x52A8;&#x5206;&#x7C7B;" Target="ENABLE_AUTO_CATEGORY" Default="" Mode="" Description="&#x662F;&#x5426;&#x81EA;&#x52A8;&#x5206;&#x7C7B;&#xFF0C;&#x9ED8;&#x8BA4;&#x81EA;&#x52A8;&#x5206;&#x7C7B;&#xFF0C;&#x5982;&#x4E0D;&#x60F3;&#x81EA;&#x52A8;&#x5206;&#x7C7B;&#xFF0C;&#x8BF7;&#x8BBE;&#x7F6E;&#x4E3A;false&#x3002;4.3.7+&#x53EF;&#x7528;&#x3002;" Type="Variable" Display="always" Required="false" Mask="false">false</Config>
+  <Config Name="&#x4E0B;&#x8F7D;&#x5B8C;&#x6210;&#x65F6;&#x53D1;&#x9001;&#x79CD;&#x5B50;&#x5B8C;&#x6210;&#x901A;&#x77E5;" Target="DL_FINISH_NOTIFY" Default="" Mode="" Description="&#x9ED8;&#x8BA4;&#x4F1A;&#x5728;&#x4E0B;&#x8F7D;&#x5B8C;&#x6210;&#x65F6;&#x5411;&#x8BBE;&#x5B9A;&#x7684;&#x901A;&#x77E5;&#x6E20;&#x9053;&#x53D1;&#x9001;&#x79CD;&#x5B50;&#x4E0B;&#x8F7D;&#x5B8C;&#x6210;&#x7684;&#x901A;&#x77E5;&#x6D88;&#x606F;&#xFF0C;&#x5982;&#x4E0D;&#x60F3;&#x6536;&#x6B64;&#x7C7B;&#x901A;&#x77E5;&#xFF0C;&#x5219;&#x8BBE;&#x7F6E;&#x4E3A;false&#x3002;" Type="Variable" Display="always" Required="false" Mask="false">true</Config>
+  <Config Name="tracker&#x51FA;&#x9519;&#x6570;&#x91CF;&#x9608;&#x503C;" Target="TRACKER_ERROR_COUNT_MIN" Default="" Mode="" Description="&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;&#x7684;&#x503C;&#xFF1A;&#x6B63;&#x6574;&#x6570;&#x3002;&#x5728;&#x68C0;&#x6D4B;&#x5230;tracker&#x51FA;&#x9519;&#x7684;&#x79CD;&#x5B50;&#x6570;&#x91CF;&#x8D85;&#x8FC7;&#x8FD9;&#x4E2A;&#x9608;&#x503C;&#x65F6;&#xFF0C;&#x7ED9;&#x8BBE;&#x7F6E;&#x7684;&#x901A;&#x77E5;&#x6E20;&#x9053;&#x53D1;&#x9001;&#x901A;&#x77E5;&#x3002;4.3.7+&#x53EF;&#x7528;" Type="Variable" Display="always" Required="false" Mask="false">400</Config>
+  <Config Name="&#x6743;&#x9650;&#x63A9;&#x7801;" Target="UMASK_SET" Default="" Mode="" Description="&#x6743;&#x9650;&#x63A9;&#x7801;umask&#xFF0C;&#x6307;&#x5B9A;qBittorrent&#x5728;&#x5EFA;&#x7ACB;&#x6587;&#x4EF6;&#x65F6;&#x9884;&#x8BBE;&#x7684;&#x6743;&#x9650;&#x63A9;&#x7801;&#xFF0C;&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;&#x4E3A;022&#x3002;" Type="Variable" Display="always" Required="false" Mask="false">000</Config>
+  <Config Name="&#x7231;&#x8BED;&#x98DE;&#x98DE;" Target="IYUU_TOKEN" Default="" Mode="" Description="&#x7231;&#x8BED;&#x98DE;&#x98DE;&#x7684;TOKEN" Type="Variable" Display="always" Required="false" Mask="false">xxxxxx</Config>
+  <Config Name="ServerChan" Target="SCKEY" Default="" Mode="" Description="ServerChan&#x7684;TOKEN" Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="&#x5B95;&#x673A;&#x68C0;&#x67E5;&#x7684;cron" Target="CRON_HEALTH_CHECK" Default="" Mode="" Description="&#x5B95;&#x673A;&#x68C0;&#x67E5;&#x7684;cron&#xFF0C;&#x5728;&#x8BBE;&#x5B9A;&#x7684;cron&#x8FD0;&#x884C;&#x65F6;&#x5982;&#x53D1;&#x73B0;qbittorrent-nox&#x5B95;&#x673A;&#x4E86;&#xFF0C;&#x5219;&#x5411;&#x8BBE;&#x7F6E;&#x7684;&#x901A;&#x77E5;&#x6E20;&#x9053;&#x53D1;&#x9001;&#x901A;&#x77E5;&#x3002;" Type="Variable" Display="always" Required="false" Mask="false">12 * * * *</Config>
+  <Config Name="&#x68C0;&#x67E5;tracker&#x72B6;&#x6001;&#x662F;&#x5426;&#x5065;&#x5EB7;&#x7684;cron" Target="CRON_TRACKER_ERROR" Default="" Mode="" Description="&#x68C0;&#x67E5;tracker&#x72B6;&#x6001;&#x662F;&#x5426;&#x5065;&#x5EB7;&#x7684;cron&#xFF0C;&#x5728;&#x8BBE;&#x5B9A;&#x7684;cron&#x5C06;&#x68C0;&#x67E5;&#x6240;&#x6709;&#x79CD;&#x5B50;&#x7684;tracker&#x72B6;&#x6001;&#xFF0C;&#x5982;&#x679C;&#x6709;&#x95EE;&#x9898;&#x5C31;&#x6253;&#x4E0A;TrackerError&#x7684;&#x6807;&#x7B7E;&#x3002;&#x5BF9;&#x4E8E;&#x79CD;&#x5B50;&#x5F88;&#x591A;&#x7684;&#x5927;&#x6237;&#x4EBA;&#x5BB6;&#xFF0C;&#x5EFA;&#x8BAE;&#x628A;cron&#x9891;&#x7387;&#x4FEE;&#x6539;&#x4F4E;&#x4E00;&#x4E9B;&#xFF0C;&#x4E00;&#x5929;&#x4E00;&#x6B21;&#x5373;&#x53EF;&#x3002;" Type="Variable" Display="always" Required="false" Mask="false">30 11 * * *</Config>
+  <Config Name="AppData Config Path" Target="/data" Default="" Mode="rw" Description="" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/qb</Config>
+</Container>

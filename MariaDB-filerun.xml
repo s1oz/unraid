@@ -1,0 +1,104 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>MariaDB-filerun</Name>
+  <Repository>mariadb</Repository>
+  <Registry>https://hub.docker.com/_/mariadb</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://forums.unraid.net/topic/110019-support-mariadb-official/</Support>
+  <Project>https://mariadb.org/</Project>
+  <Overview>Official MariaDB database container. It allows to set a database and username without using the console.&#xD;
+&#xD;
+MariaDB is a community-developed, commercially supported fork of MySQL (RDBMS).&#xD;
+&#xD;
+Root Password:&#xD;
+This container creates by default a random root password on initial execution. Open Docker &amp;gt; MariaDB Icon &amp;gt; Logs &amp;gt; Scroll down to "GENERATED ROOT PASSWORD" to find it.&#xD;
+&#xD;
+Creating database dumps&#xD;
+docker exec MariaDB-Official sh -c 'exec mysqldump --all-databases -uroot -p"YOUR_ROOT_PASSWORD"' &amp;gt; /mnt/user/Backups/all-databases.sql&#xD;
+&#xD;
+Restoring data from dump files&#xD;
+docker exec -i MariaDB-Official sh -c 'exec mysql -uroot -p"YOUR_ROOT_PASSWORD"' &amp;lt; /mnt/user/Backups/all-databases.sql</Overview>
+  <Category>Tools:Utilities Other: Network:Other</Category>
+  <WebUI/>
+  <TemplateURL>https://raw.githubusercontent.com/mgutt/unraid-docker-templates/master/mgutt/MariaDB-Official.xml</TemplateURL>
+  <Icon>https://github.com/mgutt/unraid-docker-templates/raw/main/mgutt/images/mariadb.png</Icon>
+  <ExtraParams>--user=99:100 --memory=2G</ExtraParams>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1648709147</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>Official MariaDB database container. It allows to set a database and username without using the console.&#xD;
+&#xD;
+MariaDB is a community-developed, commercially supported fork of MySQL (RDBMS).&#xD;
+&#xD;
+Root Password:&#xD;
+This container creates by default a random root password on initial execution. Open Docker &amp;gt; MariaDB Icon &amp;gt; Logs &amp;gt; Scroll down to "GENERATED ROOT PASSWORD" to find it.&#xD;
+&#xD;
+Creating database dumps&#xD;
+docker exec MariaDB-Official sh -c 'exec mysqldump --all-databases -uroot -p"YOUR_ROOT_PASSWORD"' &amp;gt; /mnt/user/Backups/all-databases.sql&#xD;
+&#xD;
+Restoring data from dump files&#xD;
+docker exec -i MariaDB-Official sh -c 'exec mysql -uroot -p"YOUR_ROOT_PASSWORD"' &amp;lt; /mnt/user/Backups/all-databases.sql</Description>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>3306</HostPort>
+        <ContainerPort>3306</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/mariadb-official/data</HostDir>
+      <ContainerDir>/var/lib/mysql</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/mariadb-official/config</HostDir>
+      <ContainerDir>/etc/mysql/conf.d</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value/>
+      <Name>MARIADB_RANDOM_ROOT_PASSWORD</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>filerun</Value>
+      <Name>MARIADB_DATABASE</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>filerun</Value>
+      <Name>MARIADB_USER</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>passwd123</Value>
+      <Name>MARIADB_PASSWORD</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>passwd123</Value>
+      <Name>MARIADB_ROOT_PASSWORD</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="Port" Target="3306" Default="" Mode="tcp" Description="Container Port: 3306" Type="Port" Display="always" Required="true" Mask="false">3306</Config>
+  <Config Name="Generate Random Password" Target="MARIADB_RANDOM_ROOT_PASSWORD" Default="" Mode="" Description="Set to yes, to generate a random root password. The generated password will be printed to the logs (Docker &amp;gt; MariaDB Icon &amp;gt; Logs)." Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="Database Name" Target="MARIADB_DATABASE" Default="" Mode="" Description="This variable allows you to specify the name of a database to be created on image startup." Type="Variable" Display="always" Required="true" Mask="false">filerun</Config>
+  <Config Name="Database User" Target="MARIADB_USER" Default="" Mode="" Description="Container Variable: MARIADB_USER" Type="Variable" Display="always" Required="true" Mask="false">filerun</Config>
+  <Config Name="Database Password" Target="MARIADB_PASSWORD" Default="" Mode="" Description="Container Variable: MARIADB_PASSWORD" Type="Variable" Display="always" Required="true" Mask="false">passwd123</Config>
+  <Config Name="Data" Target="/var/lib/mysql" Default="" Mode="rw" Description="Recommened: For better performance replace /mnt/user against /mnt/cache. Note: This requires appdata share caching set to Prefer or Only!" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/mariadb-official/data</Config>
+  <Config Name="Config" Target="/etc/mysql/conf.d" Default="" Mode="rw" Description="Container Path: /etc/mysql/conf.d" Type="Path" Display="always-hide" Required="true" Mask="false">/mnt/user/appdata/mariadb-official/config</Config>
+  <Config Name="Root Password" Target="MARIADB_ROOT_PASSWORD" Default="" Mode="" Description="Generate Random Password must be empty if you like to set your own Root Password!" Type="Variable" Display="advanced-hide" Required="false" Mask="false">passwd123</Config>
+</Container>

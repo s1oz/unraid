@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>embyplus</Name>
+  <Repository>s1oz/embyplus</Repository>
+  <Registry>https://hub.docker.com/r/s1oz/embyplus</Registry>
+  <Network>br0</Network>
+  <MyIP>192.168.1.9</MyIP>
+  <Shell>bash</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://hub.docker.com/r/s1oz/embyplus</Support>
+  <Project>https://hub.docker.com/r/s1oz/embyplus</Project>
+  <Overview>&#x624B;&#x52A8;&#x8BBE;&#x7F6E;IP&#x540E;&#x8FD0;&#x884C;emby&#x4F2A;&#x7AD9;&amp;gt;&#x52AB;&#x6301;mb3admin.com&#x5230;&#x8BBE;&#x7F6E;IP </Overview>
+  <Category>Tools:</Category>
+  <WebUI/>
+  <TemplateURL/>
+  <Icon>https://d36jcksde1wxzq.cloudfront.net/be7833db9bddb4494d2a7c3dd659199a.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1634776963</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Requires/>
+  <Description>&#x624B;&#x52A8;&#x8BBE;&#x7F6E;IP&#x540E;&#x8FD0;&#x884C;emby&#x4F2A;&#x7AD9;&amp;gt;&#x52AB;&#x6301;mb3admin.com&#x5230;&#x8BBE;&#x7F6E;IP </Description>
+  <Networking>
+    <Mode>br0</Mode>
+    <Publish/>
+  </Networking>
+  <Data/>
+  <Environment/>
+  <Labels/>
+</Container>

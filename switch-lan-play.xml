@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>switch-lan-play</Name>
+  <Repository>spacemeowx2/switch-lan-play</Repository>
+  <Registry>https://hub.docker.com/r/spacemeowx2/switch-lan-play</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/spacemeowx2/switch-lan-play/blob/master/README_zh.md</Support>
+  <Project>https://hub.docker.com/r/spacemeowx2/switch-lan-play</Project>
+  <Overview>Switch &#x865A;&#x62DF;&#x5C40;&#x57DF;&#x7F51;&#x8054;&#x673A;&#x5DE5;&#x5177;&#xFF0C;&#x80FD;&#x8BA9;&#x4F60;&#x548C;&#x8FDC;&#x65B9;&#x7684;&#x670B;&#x53CB;&#x50CF;&#x5728;&#x5C40;&#x57DF;&#x7F51;&#x91CC;&#x4E00;&#x6837;&#x8054;&#x673A;&#x3002;&#xD;
+</Overview>
+  <Category/>
+  <WebUI/>
+  <TemplateURL/>
+  <Icon>https://d36jcksde1wxzq.cloudfront.net/be7833db9bddb4494d2a7c3dd659199a.png</Icon>
+  <ExtraParams>-d</ExtraParams>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1641276093</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Requires/>
+  <Config Name="udp" Target="11451" Default="" Mode="udp" Description="" Type="Port" Display="always" Required="false" Mask="false">11451</Config>
+  <Config Name="tcp" Target="11451" Default="" Mode="tcp" Description="" Type="Port" Display="always" Required="false" Mask="false">11451</Config>
+</Container>

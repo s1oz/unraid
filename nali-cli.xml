@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>nali-cli</Name>
+  <Repository>s1oz/nali-cli:latest</Repository>
+  <Registry>https://hub.docker.com/r/s1oz/nali-cli</Registry>
+  <Network>host</Network>
+  <MyIP/>
+  <Shell>bash</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/SukkaW/nali-cli</Support>
+  <Project>https://github.com/SukkaW/nali-cli</Project>
+  <Overview>Parse info of IP Address or CDN's CNAME without leaving your terminal</Overview>
+  <Category>Tools:</Category>
+  <WebUI/>
+  <TemplateURL/>
+  <Icon>https://d36jcksde1wxzq.cloudfront.net/be7833db9bddb4494d2a7c3dd659199a.png</Icon>
+  <ExtraParams>-it</ExtraParams>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1659172605</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Requires/>
+</Container>

@@ -1,0 +1,361 @@
+# 默认使用meta内核
+# 因shellclash只会抓取规则进行二次加工, 此规则只保留规则定义, 其他全靠shellclash定义自己生成
+# 如其他软件导入报错, 请自行补全, 参照此示例 https://docs.metacubex.one/example/ex1
+#---------------------------------------------------#
+#                  默认使用meta内核
+#              根据需求自行删减#屏蔽内容
+#         因shellclash只会抓取规则进行二次加工
+#  此规则只保留规则定义 其他全靠shellclas选项自动生成
+#      如导入其他软件报错 参照以下链接自行补全
+#   示例 https://docs.metacubex.one/example/ex1
+#---------------------------------------------------#
+
+# 机场订阅
+proxy-providers:
+  ss: # 订阅1
+    type: http # http在线获取  file加载本地文件
+    url:  xxxxxxxxxxxxx # 机场给你的clash订阅链接
+    interval: 86400
+    path: ./proxy_provider/ss.yaml # 保存在clash运行目录下的本地文件的名字 可以随便取
+#    filter: '(港|HK|Hong Kong)' # 正则过滤后本组仅含HK节点
+    health-check:  # 健康检查选项从此处开始
+      enable: true # 是否自动进行latency-test
+      interval: 600  # ping节点时间间隔 
+      # lazy: true # 为true时，未被使用时不进行测ping
+      url: http://www.youtube.com/generate_204 # 用来测ping的地址
+      
+  plus: # 订阅2 如无直接删除
+    type: http 
+    url:  http://192.168.1.19/plus.yaml 
+    path: ./proxy_provider/pluss.yaml 
+    # filter: '(港|HK|Hong Kong)' 
+    health-check:  
+      enable: true 
+      interval: 3600  
+      url: http://www.youtube.com/generate_204
+
+
+# 代理组
+proxy-groups:
+# type:
+# select 手动选择，该组在节点列表上，手动选择列表或者 proxy-group 
+# url-test 延迟最低节点，测试该组所有节点的延迟
+# fallback 定期测试列表中服务器的可用性，按顺序切换使用第一个可用的服务器
+# load-balance 负载均衡，由该组2个以上的节点提供链接 
+
+  - name: "🚀 节点选择"
+    type: select
+    proxies:
+      - 🕳 全球直连
+      - 📡 故障转移
+    use:
+      - ss
+      - plus
+ 
+  - name: "🗝 特殊分流"
+    type: select
+    use:
+      - ss
+      - plus
+    proxies:
+      - 🕳 全球直连
+      - 📡 故障转移
+ 
+  - name: "🔰 HK-IEPL" # 筛选第一订阅中HK线路用于故障转移
+    type: url-test
+    use:
+      - ss
+    tolerance: 50
+    url: 'http://www.youtube.com/generate_204'      
+    interval: 300
+    # disable-udp: true    #是否关闭UDP
+    filter: '(HK-A|HK-B|HK-C|HK-D)'
+    
+  - name: "🔰 HK-PLUS" # 筛选第二订阅中HK线路用于故障转移
+    type: url-test
+    use:
+      - plus
+    tolerance: 50 
+    url: 'http://www.youtube.com/generate_204'
+    interval: 300         
+
+    
+  - name: "🔰 OTHER" # 筛选第一订阅中除HK以外线路用于故障转移
+    type: url-test 
+    use:
+      - ss
+    tolerance: 50
+    url: 'http://www.youtube.com/generate_204' 
+    interval: 300         
+    filter: '(JP|MO|TW|US|TEST)' 
+    
+  - name: "📡 故障转移"
+    type: fallback         #通过httping URL 当没有ping值时 按顺序自动切换下一个节点
+    proxies: # 按顺序优先级填写
+      - 🔰 HK-IEPL
+      - 🔰 HK-PLUS
+      - 🔰 OTHER
+    url: 'http://www.youtube.com/generate_204'
+    interval: 300
+
+  - name: "📹 YouTube Premium"
+    type: select
+    use:
+      - ss
+      - plus
+    proxies:
+      - 🚀 节点选择
+
+  - name: "📽 国外媒体"
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - 🕳 全球直连
+    use:
+      - ss
+    
+  - name: "💰 PayPal"
+    type: select
+    proxies:
+      - 🕳 全球直连
+    use:
+      - ss
+    
+  - name: "📱 电报信息"
+    type: select
+    proxies:
+      - 🚀 节点选择
+    use:
+      - ss
+      - plus
+
+  - name: "🍎 苹果服务"
+    type: select
+    proxies:
+      - 🕳 全球直连
+      - 🚀 节点选择
+
+  - name: "Ⓜ️ OneDrive"
+    type: select
+    proxies:
+      - 🕳 全球直连
+      - 🚀 节点选择
+    
+  - name: "Ⓜ️ 微软服务"
+    type: select
+    proxies:
+      - 🕳 全球直连
+      - 🚀 节点选择
+    
+  - name: "🎮 游戏服务"
+    type: select
+    proxies:
+      - 🕳 全球直连
+      - 🚀 节点选择
+    use:
+      - ss
+       
+  - name: "🆎 AdBlock"
+    type: select
+    proxies:
+      - REJECT
+      - PASS #【Meta专属】跳过：命中的规则会被忽略，继续向下查询
+      - 🕳 全球直连
+      - 🚀 节点选择
+    
+  - name: "🕳 全球直连"
+    type: select
+    proxies:
+      - DIRECT
+    
+  - name: "🐟 漏网之鱼"
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - 🕳 全球直连
+
+# 规则地址
+rule-providers:
+# AAA开头为本地自定义规则 如无需求直接删除
+  AAA-zhilian: # 自定义白名单强制直连
+    type: http
+    behavior: classical  # domain, ipcidr or classical (premium core only)
+    path: ./rule_provider/zhilian
+    url: http://192.168.1.19/zhilian.txt # 本地路径 更新方便
+    interval: 86400
+
+  AAA-daili: # 自定义黑名单强制代理
+    type: http
+    behavior: classical
+    path: ./rule_provider/daili
+    url: http://192.168.1.19/daili.txt # 本地路径 更新方便
+    interval: 86400
+
+  AAA-plus: # 特殊分流
+    type: http
+    behavior: classical
+    path: ./rule_provider/plus
+    url: http://192.168.1.19/plus.txt # 本地路径 更新方便
+    interval: 86400
+
+
+  LocalAreaNetwork: # Provider 名称
+    type: http
+    behavior: classical # domain, ipcidr or classical (premium core only)
+    path: ./rule_provider/LocalAreaNetwork
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Lan/Lan.yaml
+    interval: 86400
+
+  UnBan:
+    type: http
+    behavior: classical
+    path: ./rule_provider/UnBan
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Direct/Direct.yaml
+    interval: 86400
+
+  NTP-Service:
+    type: http
+    behavior: classical
+    path: ./rule_provider/NTP-Service
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/NTPService/NTPService.yaml
+    interval: 86400
+    
+  youtube:
+    type: http
+    behavior: classical
+    path: ./rule_provider/youtube
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/YouTube/YouTube.yaml
+    interval: 86400
+    
+  youtubemusic:
+    type: http
+    behavior: classical
+    path: ./rule_provider/youtubemusic
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/YouTubeMusic/YouTubeMusic.yaml
+    interval: 86400
+    
+  PayPal:
+    type: http
+    behavior: classical
+    path: ./rule_provider/PayPal
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/PayPal/PayPal.yaml
+    interval: 86400
+
+  zhihu:
+    type: http
+    behavior: classical
+    path: ./rule_provider/zhihu
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/ZhihuAds/ZhihuAds.yaml
+    interval: 86400
+
+  Advertising:
+    type: http
+    behavior: classical
+    path: ./rule_provider/Advertising
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Advertising/Advertising_Classical.yaml
+    interval: 86400
+    
+  OneDrive:
+    type: http
+    behavior: classical
+    path: ./rule_provider/OneDrive
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/OneDrive/OneDrive.yaml
+    interval: 86400
+
+  Microsoft:
+    type: http
+    behavior: classical
+    path: ./rule_provider/Microsoft
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Microsoft/Microsoft.yaml
+    interval: 86400
+    
+  Apple:
+    type: http
+    behavior: classical
+    path: ./rule_provider/Apple
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Apple/Apple.yaml
+    interval: 86400
+
+  Telegram:
+    type: http
+    behavior: classical
+    path: ./rule_provider/Telegram
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Telegram/Telegram.yaml
+    interval: 86400
+    
+  GlobalMedia:
+    type: http
+    behavior: classical
+    path: ./rule_provider/GlobalMedia
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/GlobalMedia/GlobalMedia_Classical.yaml
+    interval: 86400
+    
+  PrivateTracker:
+    type: http
+    behavior: classical
+    path: ./rule_provider/PrivateTracker
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/PrivateTracker/PrivateTracker.yaml
+    interval: 86400
+    
+  Game:
+    type: http
+    behavior: classical
+    path: ./rule_provider/Game
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Game/Game.yaml
+    interval: 86400
+    
+  PROXY:
+    type: http
+    behavior: classical
+    path: ./rule_provider/PROXY
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Proxy/Proxy_Classical.yaml
+    interval: 86400
+    
+  CloudCN:
+    type: http
+    behavior: classical
+    path: ./rule_provider/CloudCN
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Cloud/CloudCN/CloudCN.yaml
+    interval: 86400
+    
+  ChinaMax:
+    type: http
+    behavior: classical
+    path: ./rule_provider/ChinaMax
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/ChinaMax/ChinaMax_Classical.yaml
+    interval: 86400
+
+
+# 规则
+rules:
+# 这些是自定义规则，想要的可以继续加
+  - DOMAIN-SUFFIX,tongji.baidu.com,DIRECT
+  - DOMAIN-SUFFIX,click.simba.taobao.com,DIRECT
+#  - DOMAIN-SUFFIX,freenom.com,🚀 节点选择
+#  - DOMAIN-SUFFIX,line.games,🎮 游戏服务
+#  - DOMAIN-SUFFIX,gameguard.co.kr,🎮 游戏服务
+# 下面的规则是通过上面的rule-provider来确定的
+  - RULE-SET,AAA-plus,🗝 特殊分流
+  - RULE-SET,AAA-zhilian,🕳 全球直连
+  - RULE-SET,AAA-daili,🚀 节点选择
+  - RULE-SET,LocalAreaNetwork,🕳 全球直连
+  - RULE-SET,UnBan,🕳 全球直连
+  - RULE-SET,NTP-Service,🕳 全球直连
+  - RULE-SET,PayPal,💰 PayPal
+  - RULE-SET,zhihu,🆎 AdBlock
+  - RULE-SET,Advertising,🆎 AdBlock
+  - RULE-SET,youtube,📹 YouTube Premium
+  - RULE-SET,youtubemusic,📹 YouTube Premium
+  - RULE-SET,OneDrive,Ⓜ️ OneDrive
+  - RULE-SET,Microsoft,Ⓜ️ 微软服务
+  - RULE-SET,Apple,🍎 苹果服务
+  - RULE-SET,Telegram,📱 电报信息
+  - RULE-SET,GlobalMedia,📽 国外媒体
+  - RULE-SET,PrivateTracker,🕳 全球直连
+  - RULE-SET,Game,🎮 游戏服务
+  - RULE-SET,CloudCN,🕳 全球直连
+  - RULE-SET,ChinaMax,🕳 全球直连
+  - RULE-SET,PROXY,🚀 节点选择
+#  - GEOIP,CN,DIRECT
+  - GEOSITE,CN,DIRECT #Meta内核专属
+  - MATCH,🐟 漏网之鱼

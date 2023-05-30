@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>Filerun-ofi</Name>
+  <Repository>filerun/filerun:latest</Repository>
+  <Registry>https://hub.docker.com/r/filerun/filerun</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://forums.unraid.net/topic/120473-support-fantucie-apps/</Support>
+  <Project>https://github.com/filerun</Project>
+  <Overview>FileRun is a self-hosted Google Drive alternative. It is a full featured web based file manager with an easy to use user interface. It is great for managing your photo, movie, audio collection, or sharing files with your family and friends.&#xD;
+&#xD;
+&#x4E2D;&#x6587;&#x8865;&#x4E01;&#xFF1A;&#xD;
+https://raw.githubusercontent.com/lz-wang/FileRun-Translation-Chinese/master/chinese.php</Overview>
+  <Category>Cloud: MediaApp:Video MediaApp:Music MediaApp:Photos MediaApp:Other MediaServer:Video MediaServer:Music MediaServer:Photos MediaServer:Other Network:Web</Category>
+  <WebUI>http://[IP]:[PORT:28083]</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/ItJustFox/unraidtemplate/master/filerun/filerun.xml</TemplateURL>
+  <Icon>https://www.filerun.com/images/logo.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1648709452</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>FileRun is a self-hosted Google Drive alternative. It is a full featured web based file manager with an easy to use user interface. It is great for managing your photo, movie, audio collection, or sharing files with your family and friends.&#xD;
+&#xD;
+&#x4E2D;&#x6587;&#x8865;&#x4E01;&#xFF1A;&#xD;
+https://raw.githubusercontent.com/lz-wang/FileRun-Translation-Chinese/master/chinese.php</Description>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>28083</HostPort>
+        <ContainerPort>80</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/FilesRun/</HostDir>
+      <ContainerDir>/var/www/html</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/</HostDir>
+      <ContainerDir>/user-files/</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value>192.168.1.10</Value>
+      <Name>FR_DB_HOST</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>3306</Value>
+      <Name>FR_DB_PORT</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>filerun</Value>
+      <Name>FR_DB_NAME</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>filerun</Value>
+      <Name>FR_DB_USER</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>passwd123</Value>
+      <Name>FR_DB_PASS</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="WebUI Port" Target="80" Default="80" Mode="tcp" Description="" Type="Port" Display="always" Required="false" Mask="false">28083</Config>
+  <Config Name="DatabaseHost" Target="FR_DB_HOST" Default="127.0.0.1" Mode="" Description="MariaDB-filerun IP" Type="Variable" Display="always" Required="true" Mask="false">192.168.1.10</Config>
+  <Config Name="DatabasePort" Target="FR_DB_PORT" Default="3306" Mode="" Description="Set the port of your database here" Type="Variable" Display="always" Required="true" Mask="false">3306</Config>
+  <Config Name="DatabaseName" Target="FR_DB_NAME" Default="" Mode="" Description="Set the Database Name here" Type="Variable" Display="always" Required="true" Mask="false">filerun</Config>
+  <Config Name="DatabaseUser" Target="FR_DB_USER" Default="filerun" Mode="" Description="" Type="Variable" Display="always" Required="true" Mask="false">filerun</Config>
+  <Config Name="DatabasePassword" Target="FR_DB_PASS" Default="changeme" Mode="" Description="Set the Database Password here" Type="Variable" Display="always" Required="true" Mask="false">passwd123</Config>
+  <Config Name="AppData" Target="/var/www/html" Default="/mnt/user/appdata/FilesRun/" Mode="rw" Description="Set the appdata path part here" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/FilesRun/</Config>
+  <Config Name="UserFile" Target="/user-files/" Default="/mnt/user/FileRunData/" Mode="rw" Description="Set where will be stock all image ect..." Type="Path" Display="always" Required="true" Mask="false">/mnt/</Config>
+</Container>

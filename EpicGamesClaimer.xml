@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>EpicGamesClaimer</Name>
+  <Repository>charlocharlie/epicgames-freegames:latest</Repository>
+  <Registry>https://hub.docker.com/r/charlocharlie/epicgames-freegames</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>bash</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://hub.docker.com/r/charlocharlie/epicgames-freegames</Support>
+  <Project>https://hub.docker.com/r/charlocharlie/epicgames-freegames</Project>
+  <Overview>&#x81EA;&#x52A8;&#x9886;&#x53D6;Epic&#x6E38;&#x620F;&#x5546;&#x57CE;&#x6BCF;&#x5468;&#x514D;&#x8D39;&#x6E38;&#x620F;&#x3002;&#xD;
+&#x901A;&#x8FC7;&#x914D;&#x7F6E;&#x6587;&#x4EF6;json&#x4FEE;&#x6539;&#x8BBE;&#x7F6E;&#x9009;&#x9879;&#xD;
+  "runOnStartup": true, &#x8FD0;&#x884C;&#x540E;&#x7ACB;&#x5373;&#x6267;&#x884C;&#x4EFB;&#x52A1;&#xD;
+  "timezone": "America/Chicago",&#x5982;&#x679C;&#x4F7F;&#x7528; TZ=UTC&#xFF0C;&#xD;
+  "cronSchedule": "5 16 * * *",&#x503C; 5 16 * * * &#x5C06;&#x5728;&#x65B0;&#x6E38;&#x620F;&#x53EF;&#x7528; 5 &#x5206;&#x949F;&#x540E;&#x8FD0;&#x884C;&#xD;
+  "url: "http://localhost:3000/?targetId=F574xxxxxxxxxxxx369"&#x5982;&#x5361;&#x9A8C;&#x8BC1;,&#x901A;&#x8FC7;&#x65E5;&#x5FD7;&#x4E2D;&#x7684;&#x5730;&#x5740;&#x624B;&#x52A8;&#x9A8C;&#x8BC1;</Overview>
+  <Category>Tools:</Category>
+  <WebUI/>
+  <TemplateURL/>
+  <Icon>https://github.com/s1oz/unraid/raw/master/png/epic.png</Icon>
+  <ExtraParams>-d -m 2g</ExtraParams>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1644200087</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Requires/>
+  <Config Name="&#x7528;&#x6237;&#x540D;&#x6216;&#x90AE;&#x7BB1;" Target="EMAIL" Default="" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="&#x5BC6;&#x7801;" Target="PASSWORD" Default="" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="Web&#x9875;&#x9762;&#x7AEF;&#x53E3;" Target="3000" Default="" Mode="tcp" Description="&#x6258;&#x7BA1;&#x9A8C;&#x8BC1;&#x7801;&#x89E3;&#x51B3;&#x9875;&#x9762;&#x7684; Web &#x670D;&#x52A1;&#x5668;&#x6240;&#x5728;&#x7684;&#x7AEF;&#x53E3;&#x6620;&#x5C04;" Type="Port" Display="always" Required="false" Mask="false">3000</Config>
+  <Config Name="&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x76EE;&#x5F55;" Target="/usr/app/config" Default="" Mode="rw" Description="JSON &#x914D;&#x7F6E;,&#x652F;&#x6301;&#x591A;&#x8D26;&#x6237;,&#x901A;&#x77E5;,&#x53C2;&#x6570;&#x914D;&#x7F6E;" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/epicgames</Config>
+</Container>
